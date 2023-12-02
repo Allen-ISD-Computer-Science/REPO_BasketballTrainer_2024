@@ -5,7 +5,7 @@ Our aim is to create a product that can make learning accessible to anyone with 
 # Roles
 
 - Product Manager:
-- Project Manager: Onik Hoque [onikh] (https://www.codermerlin.com/users/onik-hoque/Digital%20Portfolio/index.html)
+- Project Manager: Onik Hoque [onikh](https://www.codermerlin.com/users/onik-hoque/Digital%20Portfolio/index.html)
 - Release Manager: Tahmid Rahman [TahmidR2456](https://www.codermerlin.com/users/tahmid-rahman/Digital%20Portfolio/index.html)
 - QA Analyst:
 - UI/UX Designer: 

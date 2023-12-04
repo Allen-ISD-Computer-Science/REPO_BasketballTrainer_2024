@@ -1,6 +1,6 @@
 # Vision Statement
 
-Our aim is to create a product that can make learning accessible to anyone with a smart device, regardless of economic status, age, or skill level.
+Our aim is to create a product that makes learning accessible to anyone with a smart device, regardless of economic status, age, or skill level.
 
 # Roles
 

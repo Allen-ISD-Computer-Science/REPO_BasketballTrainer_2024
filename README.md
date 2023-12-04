@@ -1,7 +1,7 @@
 # Vision Statement
 
 Our aim is to create a product that makes learning accessible to anyone with a smart device, regardless of economic status, age, or skill level.
-
+ 
 # Roles
 
 - Product Manager: Onik Hoque [onikh](https://www.codermerlin.com/users/onik-hoque/Digital%20Portfolio/index.html)

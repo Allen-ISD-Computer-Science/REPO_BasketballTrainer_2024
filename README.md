@@ -7,7 +7,7 @@
 - Product Manager:
 - Project Manager:
 - Release Manager: Tahmid Rahman [TahmidR2456](https://www.codermerlin.com/users/tahmid-rahman/Digital%20Portfolio/index.html)
-- QA Analyst:
+- QA Analyst: Sean Motsi [SeanM-007]((https://codermerlin.academy/users/sean-motsi/Digital%20Portfolio) 
 - UI/UX Designer: 
 - DBA: Reynard Gunawan [Reynard-G](https://codermerlin.academy/users/reynard-gunawan/Digital%20Portfolio/index.html)
 - Engineer-Frontend (Lead):

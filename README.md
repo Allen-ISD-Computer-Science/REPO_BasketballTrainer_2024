@@ -8,7 +8,7 @@ Our aim is to create a product that makes learning accessible to anyone with a s
 - Project Manager: Devon Leerssen [dleerssen](https://www.codermerlin.com/users/devon-leerssen/Digital%20Portfolio/index.html)
 - Release Manager: Tahmid Rahman [TahmidR2456](https://www.codermerlin.com/users/tahmid-rahman/Digital%20Portfolio/index.html)
 l<<<<<<< HEAD
-- QA Analyst: Sean Motsi [SeanM-007]((https://codermerlin.academy/users/sean-motsi/Digital%20Portfolio) 
+- QA Analyst: Sean Motsi [SeanM-007](https://codermerlin.academy/users/sean-motsi/Digital%20Portfolio) 
 - UI/UX Designer: 
 =======
 - QA Analyst: Sean Motsi [SeanM-007](https://codermerlin.academy/users/sean-motsi/Digital%20Portfolio)

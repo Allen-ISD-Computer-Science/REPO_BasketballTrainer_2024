@@ -1,7 +1,8 @@
 import ultralytics
 import sys
+from PyQt6 import QtWidgets, uic
 from PyQt6.QtWidgets import * 
-from PyQt6.QtGui import * 
+from PyQt6.QtGui import QPixmap
 from PyQt6.QtCore import * 
 import sys 
   
@@ -11,8 +12,9 @@ class Window(QMainWindow):
         super().__init__() 
   
         # setting title 
-        self.setWindowTitle("AI Basketball Trainer ") 
-  
+        # self.setWindowTitle("AI Basketball Trainer ") 
+        # changing the background color  
+        # self.setStyleSheet("background-color: orange;") 
         # setting geometry 
         self.setGeometry(100, 100, 600, 400) 
   
@@ -29,7 +31,7 @@ class Window(QMainWindow):
         FilmButton = QPushButton("Film Video ", self) 
   
         # setting geometry of button 
-        FilmButton.setGeometry(250, 150, 100, 40) 
+        FilmButton.setGeometry(250, 140, 100, 40) 
   
   
         # adding action to a button 
@@ -38,11 +40,25 @@ class Window(QMainWindow):
         UploadButton = QPushButton("Video Upload ", self) 
   
         # setting geometry of button 
-        UploadButton.setGeometry(250, 250, 100, 40) 
+        UploadButton.setGeometry(250, 240, 100, 40) 
   
   
         # adding action to a button 
         UploadButton.clicked.connect(self.clickme) 
+
+        # creating a title labe 
+        titleButton = QPushButton("AI Basketball Trainer ", self) 
+  
+        titleButton.setGeometry(205, 40, 200, 40) 
+  
+        titleButton.clicked.connect(self.clickme) 
+
+        UploadButton.clicked.connect(self.clickme) 
+        label = QLabel(self)
+        pixmap = QPixmap('basketball.png')
+        label.setPixmap(pixmap)
+        self.setCentralWidget(label)
+        self.resize(pixmap.width(), pixmap.height())
   
   
     # action method 

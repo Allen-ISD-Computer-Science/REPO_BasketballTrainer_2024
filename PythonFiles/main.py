@@ -1,3 +1,4 @@
+from collections import defaultdict
 from ultralytics import YOLO
 import cv2
 import threading
@@ -14,16 +15,24 @@ if not capture.isOpened():
 while(True):
     ret, frame = capture.read()
 
-    results = basketballModel.predict(frame, show=True)
+    results = basketballModel.track(frame, show=False, persist=True, tracker="bytetrack.yaml", verbose=False)
+    labeledFrame = results[0].plot()
+    cv2.imshow("Webcam!", labeledFrame)
 
     for result in results:
-        print(result.boxes.xywh)
+        boxes = result.boxes.cpu().numpy()
+        
+
+        boxCoordinates = boxes.xyxy
+
+        
+
 
     if not ret:
         print("No more stream")
         break
 
-    cv2.imshow("Webcam!", frame)
+    
 
     if cv2.waitKey(1) == ord('q'):
         break

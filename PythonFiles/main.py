@@ -4,9 +4,12 @@ import cv2
 import threading
 
 poseModel = YOLO("yolov8n-pose.pt")
-basketballModel = YOLO(r"C:\Users\onikh\Desktop\Projects\REPO_BasketballTrainer_2024\runs\detect\train6\weights\best.pt")
+basketballModel = YOLO(r"./bball.pt")
 
-capture = cv2.VideoCapture(0)
+capture = cv2.VideoCapture(r"C:\Users\onikh\Desktop\Projects\REPO_BasketballTrainer_2024\drills.mp4")
+fps = capture.get(cv2.CAP_PROP_FPS)
+print(fps)
+
 
 if not capture.isOpened():
     print("No stream")

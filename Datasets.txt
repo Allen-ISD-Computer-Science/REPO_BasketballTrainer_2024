@@ -1,1 +1,113 @@
-https://universe.roboflow.com/eagle-eye/basketball-1zhpe
+Datsets:
+
+!!!!!!!!!!!!!!!!!!!!!!!!!BASKETBALLS!!!!!!!!!!!!!!!!!!!!!!!!
+
+https://universe.roboflow.com/w3dev/longshot-detection
+basketball, hoop
+HOOP BOUNDING BOX IS ONLY RIM, NOT NET
+
+https://universe.roboflow.com/nbuckley-uccs-edu/tracer-ws8mc/browse?queryText=&pageSize=50&startingIndex=0&browseQuery=true
+Basketball
+ALL IMAGES ARE FRAMES FROM SAME VIDEO, ASK MR BEN
+
+https://universe.roboflow.com/new-workspace-tafrt/basketball-d0j01
+basketball
+
+https://universe.roboflow.com/public-0stx0/made-baskets
+Basketball, Made-Basket
+
+https://universe.roboflow.com/aidatasets-qwszk/datasets-iztee
+ball 
+
+https://universe.roboflow.com/ahmeds-workspace/from-datasets
+ball
+FALSE NEGATIVE NEAR FIRST FEW IMAGES, FIX IF USED
+
+https://universe.roboflow.com/sportai/basketball-p0jcl
+ball, rim
+
+https://universe.roboflow.com/basketball-alpai/basketball-d3owj
+basketball
+3.2k
+
+https://universe.roboflow.com/finalprojectteam16/automatic-basketball-scoring-system
+Basketball, Net 
+5.4k
+NET CLASS INCLUDES RIM AND NET
+
+https://universe.roboflow.com/basketballdetector/nba_dataset
+basketball
+5k 
+ONLY NBA IMAGES
+
+https://universe.roboflow.com/devin-ross-g0rqc/basketball-ls818
+basketball, made basket
+3.1k
+
+https://universe.roboflow.com/hotshot/basketball-detection-tqwcs
+basketball 
+5.1k
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!COURTS!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+https://universe.roboflow.com/mathis-le-garrec-d008e/basketball-court-t9ypi
+=============, basketball-court 123s9g87gh23t, object
+2.2k
+NAMES JUST CORRESPOND TO 3 AND COURT, NO CLUE WHAT OBJECT CLASS IS
+
+https://universe.roboflow.com/zy-vevvi/court-segmentation
+1.2k
+Center-circle, Paint, basketball-court, three point line 
+
+https://universe.roboflow.com/jonatan-beiruty/court-detection
+basketball-court, three point line 
+2k 
+DONT USE UNLESS DESPERATE, 3 LINE IS WAYYY OFF
+
+https://universe.roboflow.com/zy-vevvi/nba_court_segmentation
+basketball-court, paint, three-point-line 
+0
+WILL PROB BE UPDATED LATER?
+
+https://universe.roboflow.com/zy-vevvi/seg-court
+basketball-court, paint, three-point-line 
+920
+
+https://universe.roboflow.com/zy-vevvi/all-time-seg
+basketball-court, paint, three-point-line 
+265
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Models:
+
+https://yolov8.xyz/#/?id=detection-models
+reminder to check back w ayush
+
+
+Examples: 
+https://github.com/chonyy/basketball-shot-detection
+https://github.com/Stardust87/basketball-detection
+https://github.com/avishah3/AI-Basketball-Shot-Detection-Tracker
+https://github.com/Basket-Analytics/BasketTracking
+https://github.com/browlm13/Basketball-Shot-Detection
+https://github.com/brettfazio/CVBallTracking
+
+

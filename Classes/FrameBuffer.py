@@ -18,14 +18,3 @@ class FrameBuffer:
             raise Exception("index given was out of range of FrameBuffer")
 
 
-buffer = FrameBuffer(size=3)
-
-buffer.addFrame("N")
-buffer.addFrame("I")
-buffer.addFrame("G")
-
-print(buffer.getFrames())
-
-buffer.addFrame("T")
-
-print(buffer.getFrames())

@@ -1,4 +1,4 @@
-
+from Frame import Frame
 from collections import defaultdict
 from ultralytics import YOLO
 import cv2

@@ -1,17 +1,9 @@
-#this allows the import on line 12
-
-
-from EventTracker import EventTracker
 from Frame import Frame
-
-
-
 from collections import defaultdict
 from ultralytics import YOLO
 import cv2
 import threading
 
-print("look here!: https://blog.enterprisedna.co/python-how-to-import-a-class/ and https://www.geeksforgeeks.org/python-import-module-from-different-directory/")
 
 
 
@@ -20,10 +12,10 @@ print("look here!: https://blog.enterprisedna.co/python-how-to-import-a-class/ a
 
 
 
-poseModel = YOLO("yolov8n-pose.pt")
+
 basketballModel = YOLO(r"C:\Users\onikh\Desktop\Projects\REPO_BasketballTrainer_2024\runs\detect\train6\weights\best.pt")
 
-tracker = EventTracker(bufferSize=60)
+
 
 #create a cv2 object that takes a video frame by frame
 capture = cv2.VideoCapture(0)
@@ -40,17 +32,15 @@ while(True):
 
     
 
-    basketballResults = basketballModel.track(frame, show=False, persist=True, tracker="bytetrack.yaml", verbose=False)
-    
-    tracker.updateBuffer(Frame(basketballResults=basketballResults))
-
-
+    basketballResults = basketballModel.track(frame, show=False, persist=True, tracker="bytetrack.yaml", verbose=False, conf= 0.5)
     labeledFrame = basketballResults[0].plot()
+    cv2.imshow("tracker", labeledFrame)
 
-    
+    dataFrame = Frame(basketballResults=basketballResults)
+    print(dataFrame.XCoord)
 
+        
 
-    cv2.imshow("Webcam!", labeledFrame)
 
 
 
@@ -70,8 +60,6 @@ capture.release()
 cv2.destroyAllWindows
 
 
-print("buffer stuff:")
-for frame in tracker.buffer:
-    print(frame.XCoord)
 
-print("test")
+
+

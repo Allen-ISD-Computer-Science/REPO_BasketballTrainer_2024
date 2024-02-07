@@ -13,4 +13,4 @@ class EventTracker:
         self.buffer.addFrame(results)
         
     
-tracker = EventTracker(bufferSize=3)
+b = FrameBuffer(size=10)

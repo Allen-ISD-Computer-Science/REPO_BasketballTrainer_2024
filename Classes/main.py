@@ -70,5 +70,7 @@ cv2.destroyAllWindows
 
 
 
-for results in tracker.buffer.buffer:
+for results in tracker.buffer:
     print(results)
+
+print("test")

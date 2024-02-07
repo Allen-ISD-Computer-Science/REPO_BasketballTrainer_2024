@@ -5,6 +5,9 @@ class FrameBuffer:
     def __init__(self, size):
         self.buffer = deque(maxlen=size)
 
+    def __iter__(self):
+        return iter(self.buffer)
+
     def addFrame(self, frame):
         self.buffer.appendleft(frame)
 
@@ -16,5 +19,7 @@ class FrameBuffer:
             return self.buffer[index]
         else:
             raise Exception("index given was out of range of FrameBuffer")
+        
+    
 
 

@@ -13,7 +13,20 @@ import threading
 
 print("look here!: https://blog.enterprisedna.co/python-how-to-import-a-class/ and https://www.geeksforgeeks.org/python-import-module-from-different-directory/")
 
+dribbles = 0
 
+
+def dribbleDetector(rawFrames):
+    global dribbles
+    filteredFrames = rawFrames.filterNilBasketballs(howManyFrames=3)
+    
+    if len(filteredFrames) >= 3:
+        deltaY_1 = filteredFrames[0].ball.y1 - filteredFrames[1].ball.y1
+        deltaY_2 =  filteredFrames[1].ball.y1 - filteredFrames[2].ball.y1
+        
+        if (deltaY_1 < 0 and deltaY_2 >= 0):
+            dribbles += 1
+            print("dribbles: " + str(dribbles))
 
 
 
@@ -44,6 +57,8 @@ while(True):
     
     tracker.updateBuffer(Frame(basketballResults=basketballResults))
 
+    dribbleDetector(tracker.buffer)
+
 
     labeledFrame = basketballResults[0].plot()
 
@@ -70,8 +85,11 @@ capture.release()
 cv2.destroyAllWindows
 
 
-print("buffer stuff:")
 for frame in tracker.buffer:
-    print(frame.XCoord)
+    
+    print(frame.__dict__)
 
-print("test")
+print("SEPARATOR\n\n\n")
+
+for frame in tracker.buffer.filterNilBasketballs(howManyFrames=60):
+    print(frame.__dict__)

@@ -11,6 +11,8 @@ class EventTracker:
 
     def updateBuffer(self, results):
         self.buffer.addFrame(results)
+
+
+    
         
     
-b = FrameBuffer(size=10)

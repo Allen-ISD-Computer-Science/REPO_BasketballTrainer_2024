@@ -20,6 +20,12 @@ class FrameBuffer:
         else:
             raise Exception("index given was out of range of FrameBuffer")
         
+    def filterNilBasketballs(self, howManyFrames):
+        nonNilElements = [frame for frame in self.buffer if frame.ball is not None]
+        return nonNilElements[:howManyFrames]
+        
+    
+        
     
 
 

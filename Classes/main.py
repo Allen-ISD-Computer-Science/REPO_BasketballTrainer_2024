@@ -30,6 +30,8 @@ def dribbleDetector(rawFrames, threshold):
 
 
 #what might cause the error: when the ball hasn't been there in a while, the function ALWAYS returns the three frames from forever ago, these keep playing and stack up the dribble counter like crazy
+#the reason these spam like crazy then end so abruptly is because the three frames that cause the issue leave the buffer
+#possible solution: for dribble, current frame (rawFrame[0]) CANNOT be nil???? TEST LATER
 
 
 

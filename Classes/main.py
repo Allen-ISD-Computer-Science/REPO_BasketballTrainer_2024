@@ -16,7 +16,7 @@ print("look here!: https://blog.enterprisedna.co/python-how-to-import-a-class/ a
 dribbles = 0
 
 
-def dribbleDetector(rawFrames):
+def dribbleDetector(rawFrames, threshold):
     global dribbles
     filteredFrames = rawFrames.filterNilBasketballs(howManyFrames=3)
     
@@ -24,12 +24,12 @@ def dribbleDetector(rawFrames):
         deltaY_1 = filteredFrames[0].ball.y1 - filteredFrames[1].ball.y1
         deltaY_2 =  filteredFrames[1].ball.y1 - filteredFrames[2].ball.y1
         
-        if (deltaY_1 < 0 and deltaY_2 >= 0):
+        if (deltaY_1 < threshold and deltaY_2 >= threshold):
             dribbles += 1
             print("dribbles: " + str(dribbles))
 
 
-
+#what might cause the error: when the ball hasn't been there in a while, the function ALWAYS returns the three frames from forever ago, these keep playing and stack up the dribble counter like crazy
 
 
 
@@ -57,12 +57,12 @@ while(True):
     
     tracker.updateBuffer(Frame(basketballResults=basketballResults))
 
-    dribbleDetector(tracker.buffer)
+    dribbleDetector(tracker.buffer, 10)
 
 
     labeledFrame = basketballResults[0].plot()
 
-    
+    cv2.putText(labeledFrame, ("dribbles: " + str(dribbles)), (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
 
 
     cv2.imshow("Webcam!", labeledFrame)

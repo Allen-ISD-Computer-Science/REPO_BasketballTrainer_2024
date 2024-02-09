@@ -39,7 +39,7 @@ def dribbleDetector(rawFrames, threshold):
 
 
 poseModel = YOLO("yolov8n-pose.pt")
-basketballModel = YOLO(r"C:\Users\onikh\Desktop\Projects\REPO_BasketballTrainer_2024\runs\detect\train6\weights\best.pt")
+basketballModel = YOLO(r"/Users/249361/Desktop/ISP/REPO_BasketballTrainer_2024/runs/detect/train6/weights/best.pt")
 
 tracker = EventTracker(bufferSize=60)
 

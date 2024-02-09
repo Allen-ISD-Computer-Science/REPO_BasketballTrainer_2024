@@ -20,11 +20,14 @@ def dribbleDetector(rawFrames, threshold):
     global dribbles
     filteredFrames = rawFrames.filterNilBasketballs(howManyFrames=3)
     
-    if len(filteredFrames) >= 3:
+    if len(filteredFrames) >= 3 and rawFrames[0].ball is not None:
         deltaY_1 = filteredFrames[0].ball.y1 - filteredFrames[1].ball.y1
         deltaY_2 =  filteredFrames[1].ball.y1 - filteredFrames[2].ball.y1
+
+        print("deltaY previous: " + str(deltaY_2))
+        print("deltaY current: " + str(deltaY_1))
         
-        if (deltaY_1 < threshold and deltaY_2 >= threshold):
+        if (deltaY_1 < -threshold and deltaY_2 >= threshold):
             dribbles += 1
             print("dribbles: " + str(dribbles))
 
@@ -59,7 +62,7 @@ while(True):
     
     tracker.updateBuffer(Frame(basketballResults=basketballResults))
 
-    dribbleDetector(tracker.buffer, 4)
+    dribbleDetector(tracker.buffer, 2)
 
 
     labeledFrame = basketballResults[0].plot()

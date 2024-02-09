@@ -14,9 +14,9 @@ class FrameBuffer:
     def getFrames(self):
         return list(self.buffer)
     
-    def getFrame(self, index):
-        if (0 <= index and index < len(self.buffer)):
-            return self.buffer[index]
+    def __getitem__(self, item):
+        if (0 <= item and item < len(self.buffer)):
+            return self.buffer[item]
         else:
             raise Exception("index given was out of range of FrameBuffer")
         

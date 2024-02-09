@@ -2,7 +2,7 @@ import ultralytics
 import sys
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtWidgets import * 
-from PyQt6.QtGui import QPixmap
+from PyQt6.QtGui import *
 from PyQt6.QtCore import * 
 import sys 
   
@@ -54,17 +54,13 @@ class Window(QMainWindow):
         titleButton.clicked.connect(self.clickme) 
 
         UploadButton.clicked.connect(self.clickme) 
-        label = QLabel(self)
-        pixmap = QPixmap('basketball.png')
-        label.setPixmap(pixmap)
-        self.setCentralWidget(label)
-        self.resize(pixmap.width(), pixmap.height())
-  
+
   
     # action method 
     def clickme(self): 
   
         # printing pressed 
+        filename = QtGui.QFileDialog.getOpenFileName(self, 'Open File', '.')
         print("Working") 
   
 # create pyqt5 app 

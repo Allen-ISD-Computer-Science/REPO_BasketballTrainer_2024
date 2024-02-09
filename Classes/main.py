@@ -59,7 +59,7 @@ while(True):
     
     tracker.updateBuffer(Frame(basketballResults=basketballResults))
 
-    dribbleDetector(tracker.buffer, 10)
+    dribbleDetector(tracker.buffer, 4)
 
 
     labeledFrame = basketballResults[0].plot()

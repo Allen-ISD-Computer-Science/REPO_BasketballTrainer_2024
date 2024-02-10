@@ -60,8 +60,8 @@ class Window(QMainWindow):
     def clickme(self): 
   
         # printing pressed 
-        filename = QtGui.QFileDialog.getOpenFileName(self, 'Open File', '.')
-        print("Working") 
+        //filename = QtGui.QFileDialog.getOpenFileName(self, 'Open File', '.')
+        //print("Working") 
   
 # create pyqt5 app 
 App = QApplication(sys.argv) 

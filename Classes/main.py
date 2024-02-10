@@ -59,7 +59,7 @@ if not capture.isOpened():
 while(True):
     ret, frame = capture.read()
 
-    time.sleep(.5) # for debugging
+    time.sleep(0) # for debugging
 
     basketballResults = basketballModel.track(frame, show=False, persist=True, tracker="bytetrack.yaml", verbose=False)
     
@@ -93,12 +93,3 @@ while(True):
 capture.release()
 cv2.destroyAllWindows
 
-
-for frame in tracker.buffer:
-    
-    print(frame.__dict__)
-
-print("SEPARATOR\n\n\n")
-
-for frame in tracker.buffer.filterNilBasketballs(howManyFrames=60):
-    print(frame.__dict__)

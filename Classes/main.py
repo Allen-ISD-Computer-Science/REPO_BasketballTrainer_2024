@@ -5,7 +5,7 @@ from EventTracker import EventTracker
 from Frame import Frame
 
 
-
+import time
 from collections import defaultdict
 from ultralytics import YOLO
 import cv2
@@ -15,7 +15,7 @@ print("look here!: https://blog.enterprisedna.co/python-how-to-import-a-class/ a
 
 dribbles = 0
 
-
+#make thresholds in term of the ball
 def dribbleDetector(rawFrames, threshold):
     global dribbles
     filteredFrames = rawFrames.filterNilBasketballs(howManyFrames=3)
@@ -24,10 +24,13 @@ def dribbleDetector(rawFrames, threshold):
         deltaY_1 = filteredFrames[0].ball.y1 - filteredFrames[1].ball.y1
         deltaY_2 =  filteredFrames[1].ball.y1 - filteredFrames[2].ball.y1
 
-        print("deltaY previous: " + str(deltaY_2))
-        print("deltaY current: " + str(deltaY_1))
+        #as far as I know this is basically acceleration? I check this to prevent dribbles from little shakes of the ball
+        doubleDeltaY = deltaY_1 - deltaY_2
+
         
-        if (deltaY_1 < -threshold and deltaY_2 >= threshold):
+        print("deltaY: " + str(deltaY_1) + "    double deltaY: " + str(doubleDeltaY))
+        
+        if (deltaY_1 < 0 and deltaY_2 >= 0 and doubleDeltaY <= threshold):
             dribbles += 1
             print("dribbles: " + str(dribbles))
 
@@ -42,9 +45,10 @@ poseModel = YOLO("yolov8n-pose.pt")
 basketballModel = YOLO(r"C:\Users\onikh\Desktop\Projects\REPO_BasketballTrainer_2024\runs\detect\train6\weights\best.pt")
 
 tracker = EventTracker(bufferSize=60)
+sleepTime = 0.1
 
 #create a cv2 object that takes a video frame by frame
-capture = cv2.VideoCapture(0)
+capture = cv2.VideoCapture(r"C:\Users\onikh\Desktop\Projects\REPO_BasketballTrainer_2024\TestVideos\IMG_0 - Trim.mp4")
 fps = capture.get(cv2.CAP_PROP_FPS)
 print(fps)
 
@@ -56,13 +60,13 @@ if not capture.isOpened():
 while(True):
     ret, frame = capture.read()
 
-    
+    time.sleep(0) # for debugging
 
     basketballResults = basketballModel.track(frame, show=False, persist=True, tracker="bytetrack.yaml", verbose=False)
     
     tracker.updateBuffer(Frame(basketballResults=basketballResults))
 
-    dribbleDetector(tracker.buffer, 2)
+    dribbleDetector(tracker.buffer, -5)
 
 
     labeledFrame = basketballResults[0].plot()
@@ -85,6 +89,7 @@ while(True):
 
     if cv2.waitKey(1) == ord('q'):
         break
+
 
 capture.release()
 cv2.destroyAllWindows

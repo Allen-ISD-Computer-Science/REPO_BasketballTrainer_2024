@@ -28,21 +28,20 @@ def dribbleDetector(rawFrames, threshold):
         doubleDeltaY = deltaY_1 - deltaY_2
 
         
-        print("deltaY: " + str(deltaY_1) + "    double deltaY: " + str(doubleDeltaY))
+        #print("deltaY: " + str(deltaY_1) + "    double deltaY: " + str(doubleDeltaY))
+        print("height: " + str(filteredFrames[0].ball.height))
         
         if (deltaY_1 < 0 and deltaY_2 >= 0 and doubleDeltaY <= threshold):
             dribbles += 1
             print("dribbles: " + str(dribbles))
 
 
-#what might cause the error: when the ball hasn't been there in a while, the function ALWAYS returns the three frames from forever ago, these keep playing and stack up the dribble counter like crazy
-#the reason these spam like crazy then end so abruptly is because the three frames that cause the issue leave the buffer
-#possible solution: for dribble, current frame (rawFrame[0]) CANNOT be nil???? TEST LATER
+
 
 
 
 poseModel = YOLO("yolov8n-pose.pt")
-basketballModel = YOLO(r"/Users/249361/Desktop/ISP/REPO_BasketballTrainer_2024/runs/detect/train6/weights/best.pt")
+basketballModel = YOLO(r"C:\Users\onikh\Desktop\Projects\REPO_BasketballTrainer_2024\runs\detect\train6\weights\best.pt")
 
 tracker = EventTracker(bufferSize=60)
 sleepTime = 0.1
@@ -60,7 +59,7 @@ if not capture.isOpened():
 while(True):
     ret, frame = capture.read()
 
-    time.sleep(0) # for debugging
+    time.sleep(.5) # for debugging
 
     basketballResults = basketballModel.track(frame, show=False, persist=True, tracker="bytetrack.yaml", verbose=False)
     

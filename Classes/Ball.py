@@ -7,3 +7,6 @@ class Ball:
         self.y1 = y1
         self.x2 = x2 
         self.y2 = y2
+
+        self.height = y2 - y1
+        self.width = x2 - x1

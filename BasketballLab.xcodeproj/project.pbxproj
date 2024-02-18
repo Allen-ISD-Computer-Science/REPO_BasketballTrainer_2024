@@ -20,6 +20,8 @@
 		4691401A2B82B3AB0081BD96 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140192B82B3AB0081BD96 /* SettingsRowView.swift */; };
 		4691401D2B82B3D20081BD96 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4691401C2B82B3D20081BD96 /* User.swift */; };
 		4691401F2B82B4280081BD96 /* BasketballStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4691401E2B82B4280081BD96 /* BasketballStats.swift */; };
+		469140242B82B5380081BD96 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140232B82B5380081BD96 /* ButtonView.swift */; };
+		469140262B82B5670081BD96 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140252B82B5670081BD96 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		469140192B82B3AB0081BD96 /* SettingsRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		4691401C2B82B3D20081BD96 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4691401E2B82B4280081BD96 /* BasketballStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketballStats.swift; sourceTree = "<group>"; };
+		469140232B82B5380081BD96 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		469140252B82B5670081BD96 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +111,13 @@
 		46913FE02B82ACD50081BD96 /* BasketballLab */ = {
 			isa = PBXGroup;
 			children = (
-				469140122B82B3230081BD96 /* Profile */,
 				46913FE12B82ACD50081BD96 /* BasketballLabApp.swift */,
 				46913FE32B82ACD50081BD96 /* ContentView.swift */,
+				469140202B82B4EF0081BD96 /* Authentication */,
+				4691401B2B82B3C10081BD96 /* DataModels */,
+				469140122B82B3230081BD96 /* Profile */,
+				469140232B82B5380081BD96 /* ButtonView.swift */,
+				469140252B82B5670081BD96 /* Extensions.swift */,
 				46913FE52B82ACD70081BD96 /* Assets.xcassets */,
 				46913FE72B82ACD70081BD96 /* BasketballLab.entitlements */,
 				46913FE82B82ACD70081BD96 /* Preview Content */,
@@ -145,7 +153,6 @@
 		469140122B82B3230081BD96 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				4691401B2B82B3C10081BD96 /* DataModels */,
 				469140152B82B3580081BD96 /* ProfileView.swift */,
 				469140192B82B3AB0081BD96 /* SettingsRowView.swift */,
 				469140172B82B3A30081BD96 /* ProfileSettingsView.swift */,
@@ -161,6 +168,29 @@
 				4691401E2B82B4280081BD96 /* BasketballStats.swift */,
 			);
 			path = DataModels;
+			sourceTree = "<group>";
+		};
+		469140202B82B4EF0081BD96 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				469140222B82B5030081BD96 /* ViewModels */,
+				469140212B82B4FC0081BD96 /* Views */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		469140212B82B4FC0081BD96 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		469140222B82B5030081BD96 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,9 +328,11 @@
 				4691401A2B82B3AB0081BD96 /* SettingsRowView.swift in Sources */,
 				46913FE42B82ACD50081BD96 /* ContentView.swift in Sources */,
 				4691401F2B82B4280081BD96 /* BasketballStats.swift in Sources */,
+				469140262B82B5670081BD96 /* Extensions.swift in Sources */,
 				469140182B82B3A30081BD96 /* ProfileSettingsView.swift in Sources */,
 				46913FE22B82ACD50081BD96 /* BasketballLabApp.swift in Sources */,
 				4691401D2B82B3D20081BD96 /* User.swift in Sources */,
+				469140242B82B5380081BD96 /* ButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

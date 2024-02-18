@@ -14,6 +14,12 @@
 		46913FF42B82ACD70081BD96 /* BasketballLabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46913FF32B82ACD70081BD96 /* BasketballLabTests.swift */; };
 		46913FFE2B82ACD70081BD96 /* BasketballLabUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46913FFD2B82ACD70081BD96 /* BasketballLabUITests.swift */; };
 		469140002B82ACD70081BD96 /* BasketballLabUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46913FFF2B82ACD70081BD96 /* BasketballLabUITestsLaunchTests.swift */; };
+		469140142B82B3350081BD96 /* StatBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140132B82B3350081BD96 /* StatBar.swift */; };
+		469140162B82B3580081BD96 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140152B82B3580081BD96 /* ProfileView.swift */; };
+		469140182B82B3A30081BD96 /* ProfileSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140172B82B3A30081BD96 /* ProfileSettingsView.swift */; };
+		4691401A2B82B3AB0081BD96 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140192B82B3AB0081BD96 /* SettingsRowView.swift */; };
+		4691401D2B82B3D20081BD96 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4691401C2B82B3D20081BD96 /* User.swift */; };
+		4691401F2B82B4280081BD96 /* BasketballStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4691401E2B82B4280081BD96 /* BasketballStats.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +51,12 @@
 		46913FF92B82ACD70081BD96 /* BasketballLabUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasketballLabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46913FFD2B82ACD70081BD96 /* BasketballLabUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballLabUITests.swift; sourceTree = "<group>"; };
 		46913FFF2B82ACD70081BD96 /* BasketballLabUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballLabUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		469140132B82B3350081BD96 /* StatBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatBar.swift; sourceTree = "<group>"; };
+		469140152B82B3580081BD96 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		469140172B82B3A30081BD96 /* ProfileSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingsView.swift; sourceTree = "<group>"; };
+		469140192B82B3AB0081BD96 /* SettingsRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
+		4691401C2B82B3D20081BD96 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4691401E2B82B4280081BD96 /* BasketballStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketballStats.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +107,7 @@
 		46913FE02B82ACD50081BD96 /* BasketballLab */ = {
 			isa = PBXGroup;
 			children = (
+				469140122B82B3230081BD96 /* Profile */,
 				46913FE12B82ACD50081BD96 /* BasketballLabApp.swift */,
 				46913FE32B82ACD50081BD96 /* ContentView.swift */,
 				46913FE52B82ACD70081BD96 /* Assets.xcassets */,
@@ -127,6 +140,27 @@
 				46913FFF2B82ACD70081BD96 /* BasketballLabUITestsLaunchTests.swift */,
 			);
 			path = BasketballLabUITests;
+			sourceTree = "<group>";
+		};
+		469140122B82B3230081BD96 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4691401B2B82B3C10081BD96 /* DataModels */,
+				469140152B82B3580081BD96 /* ProfileView.swift */,
+				469140192B82B3AB0081BD96 /* SettingsRowView.swift */,
+				469140172B82B3A30081BD96 /* ProfileSettingsView.swift */,
+				469140132B82B3350081BD96 /* StatBar.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		4691401B2B82B3C10081BD96 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				4691401C2B82B3D20081BD96 /* User.swift */,
+				4691401E2B82B4280081BD96 /* BasketballStats.swift */,
+			);
+			path = DataModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +293,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				469140162B82B3580081BD96 /* ProfileView.swift in Sources */,
+				469140142B82B3350081BD96 /* StatBar.swift in Sources */,
+				4691401A2B82B3AB0081BD96 /* SettingsRowView.swift in Sources */,
 				46913FE42B82ACD50081BD96 /* ContentView.swift in Sources */,
+				4691401F2B82B4280081BD96 /* BasketballStats.swift in Sources */,
+				469140182B82B3A30081BD96 /* ProfileSettingsView.swift in Sources */,
 				46913FE22B82ACD50081BD96 /* BasketballLabApp.swift in Sources */,
+				4691401D2B82B3D20081BD96 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

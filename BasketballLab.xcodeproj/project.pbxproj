@@ -31,6 +31,7 @@
 		469140352B82BD670081BD96 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140342B82BD670081BD96 /* InputView.swift */; };
 		469140372B82BEE50081BD96 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140362B82BEE50081BD96 /* LoginView.swift */; };
 		469140392B82CCB60081BD96 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140382B82CCB60081BD96 /* MainView.swift */; };
+		4691403C2B82D9570081BD96 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4691403B2B82D9570081BD96 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		469140342B82BD670081BD96 /* InputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		469140362B82BEE50081BD96 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		469140382B82CCB60081BD96 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		4691403B2B82D9570081BD96 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		46913FD52B82ACD50081BD96 = {
 			isa = PBXGroup;
 			children = (
+				4691403B2B82D9570081BD96 /* .gitignore */,
 				46913FE02B82ACD50081BD96 /* BasketballLab */,
 				46913FF22B82ACD70081BD96 /* BasketballLabTests */,
 				46913FFC2B82ACD70081BD96 /* BasketballLabUITests */,
@@ -337,6 +340,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4691403C2B82D9570081BD96 /* .gitignore in Resources */,
 				46913FEA2B82ACD70081BD96 /* Preview Assets.xcassets in Resources */,
 				46913FE62B82ACD70081BD96 /* Assets.xcassets in Resources */,
 				469140282B82B9040081BD96 /* GoogleService-Info.plist in Resources */,

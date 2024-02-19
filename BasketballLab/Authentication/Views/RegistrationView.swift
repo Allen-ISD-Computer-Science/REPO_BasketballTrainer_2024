@@ -20,11 +20,12 @@ struct RegistrationView: View {
     @State private var password = ""
     @State private var confirmedPassword = ""
     
-    @EnvironmentObject var authViewModel : AuthViewModel
+    
     
     //@State private var birthDate : Date? = nil
     
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var authViewModel : AuthViewModel
     
     var body: some View {
         
@@ -32,7 +33,7 @@ struct RegistrationView: View {
             VStack {
                 
                 
-                Image("ashwin.png")
+                Image("ashwin")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 300, height: 200)
@@ -52,7 +53,7 @@ struct RegistrationView: View {
                 
                 Button {
                     Task {
-                    //    try await authViewModel.createUser(withEmail : email, password: password, fullName: fullName)
+                        try await authViewModel.createUser(withEmail: email, password: password, fullName: fullName)
                     }
                 } label: {
                     ButtonView(text: "Create Account", imageName: "arrow.right", widthProportion: (3/4))
@@ -78,5 +79,5 @@ struct RegistrationView: View {
 }
 
 #Preview {
-    RegistrationView()
+    RegistrationView().environmentObject(AuthViewModel())
 }

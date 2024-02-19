@@ -12,7 +12,7 @@ struct LoginView: View {
     
     @State private var email = ""
     @State private var password = ""
-   // @EnvironmentObject var authViewModel : AuthViewModel
+    @EnvironmentObject var authViewModel : AuthViewModel
     
     var body: some View {
         
@@ -21,7 +21,7 @@ struct LoginView: View {
                 
                 
                 
-                Image("ashwin.png")
+                Image("ashwin")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 300, height: 200)
@@ -37,9 +37,9 @@ struct LoginView: View {
                 
                 
                 Button {
-                    //Task {
-                      //  try await authViewModel.signIn(withEmail: email, password: password)
-                    //}
+                    Task {
+                        try await authViewModel.signIn(withEmail: email, password: password)
+                    }
                 } label: {
                     ButtonView(text: "Log In", imageName: "arrow.right", widthProportion: (3/4))
                         .background(Color.blue).foregroundColor(Color.white).cornerRadius(10)
@@ -67,5 +67,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView()
+    LoginView().environmentObject(AuthViewModel())
 }

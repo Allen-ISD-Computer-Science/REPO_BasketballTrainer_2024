@@ -41,13 +41,13 @@ def dribbleDetector(rawFrames, threshold):
 
 
 poseModel = YOLO("yolov8n-pose.pt")
-basketballModel = YOLO(r"C:\Users\onikh\Desktop\Projects\REPO_BasketballTrainer_2024\runs\detect\train6\weights\best.pt")
+basketballModel = YOLO(r"runs/detect/train6/weights/best.pt")
 
 tracker = EventTracker(bufferSize=60)
 sleepTime = 0.1
 
 #create a cv2 object that takes a video frame by frame
-capture = cv2.VideoCapture(r"C:\Users\onikh\Desktop\Projects\REPO_BasketballTrainer_2024\TestVideos\IMG_0 - Trim.mp4")
+capture = cv2.VideoCapture(r"TestVideos/IMG_0 - Trim.mp4")
 fps = capture.get(cv2.CAP_PROP_FPS)
 print(fps)
 

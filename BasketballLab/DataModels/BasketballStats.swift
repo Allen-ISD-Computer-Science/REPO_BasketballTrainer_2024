@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BasketballStats {
+struct BasketballStats : Codable {
     
     var lifetimeDribbles = 0
     var lifetimeFGA = 0

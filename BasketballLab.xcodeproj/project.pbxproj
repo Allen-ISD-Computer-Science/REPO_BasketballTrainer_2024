@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		465DAF3D2B89361100677CA8 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DAF3C2B89361100677CA8 /* CameraViewModel.swift */; };
+		465DAF3F2B8984E800677CA8 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DAF3E2B8984E800677CA8 /* CameraView.swift */; };
+		465DAF412B8A4F7800677CA8 /* Drills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DAF402B8A4F7800677CA8 /* Drills.swift */; };
+		465DAF432B8A5CD900677CA8 /* ObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 465DAF422B8A5CD900677CA8 /* ObjectDetector.mlmodel */; };
+		466D5AFC2B834075009669FB /* BirthDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D5AFB2B834075009669FB /* BirthDatePickerView.swift */; };
+		466D5AFE2B83D0C2009669FB /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D5AFD2B83D0C2009669FB /* CustomAlertView.swift */; };
+		466D5B012B8696B9009669FB /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D5B002B8696B9009669FB /* WorkoutsView.swift */; };
+		466D5B052B86E73D009669FB /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D5B042B86E73D009669FB /* CameraPreviewView.swift */; };
+		466D5B082B884807009669FB /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D5B072B884807009669FB /* PreviewView.swift */; };
 		46913FE22B82ACD50081BD96 /* BasketballLabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46913FE12B82ACD50081BD96 /* BasketballLabApp.swift */; };
 		46913FE42B82ACD50081BD96 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46913FE32B82ACD50081BD96 /* ContentView.swift */; };
 		46913FE62B82ACD70081BD96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46913FE52B82ACD70081BD96 /* Assets.xcassets */; };
@@ -32,6 +41,7 @@
 		469140372B82BEE50081BD96 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140362B82BEE50081BD96 /* LoginView.swift */; };
 		469140392B82CCB60081BD96 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140382B82CCB60081BD96 /* MainView.swift */; };
 		4691403C2B82D9570081BD96 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4691403B2B82D9570081BD96 /* .gitignore */; };
+		4691403E2B8317FA0081BD96 /* LocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4691403D2B8317FA0081BD96 /* LocalData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +62,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		465DAF3C2B89361100677CA8 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		465DAF3E2B8984E800677CA8 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		465DAF402B8A4F7800677CA8 /* Drills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drills.swift; sourceTree = "<group>"; };
+		465DAF422B8A5CD900677CA8 /* ObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectDetector.mlmodel; sourceTree = "<group>"; };
+		466D5AFB2B834075009669FB /* BirthDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDatePickerView.swift; sourceTree = "<group>"; };
+		466D5AFD2B83D0C2009669FB /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
+		466D5B002B8696B9009669FB /* WorkoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsView.swift; sourceTree = "<group>"; };
+		466D5B042B86E73D009669FB /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		466D5B072B884807009669FB /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		46913FDE2B82ACD50081BD96 /* BasketballLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasketballLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46913FE12B82ACD50081BD96 /* BasketballLabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballLabApp.swift; sourceTree = "<group>"; };
 		46913FE32B82ACD50081BD96 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,6 +97,7 @@
 		469140362B82BEE50081BD96 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		469140382B82CCB60081BD96 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4691403B2B82D9570081BD96 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		4691403D2B8317FA0081BD96 /* LocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +128,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		466D5AFF2B8695AC009669FB /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				466D5B062B883CF0009669FB /* Experiment */,
+				466D5B002B8696B9009669FB /* WorkoutsView.swift */,
+				465DAF3E2B8984E800677CA8 /* CameraView.swift */,
+				466D5B042B86E73D009669FB /* CameraPreviewView.swift */,
+				465DAF3C2B89361100677CA8 /* CameraViewModel.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		466D5B062B883CF0009669FB /* Experiment */ = {
+			isa = PBXGroup;
+			children = (
+				466D5B072B884807009669FB /* PreviewView.swift */,
+			);
+			path = Experiment;
+			sourceTree = "<group>";
+		};
 		46913FD52B82ACD50081BD96 = {
 			isa = PBXGroup;
 			children = (
@@ -134,13 +174,17 @@
 			children = (
 				46913FE12B82ACD50081BD96 /* BasketballLabApp.swift */,
 				46913FE32B82ACD50081BD96 /* ContentView.swift */,
+				466D5AFF2B8695AC009669FB /* Camera */,
 				4691403A2B82CE150081BD96 /* MainApp */,
 				469140202B82B4EF0081BD96 /* Authentication */,
 				4691401B2B82B3C10081BD96 /* DataModels */,
 				469140122B82B3230081BD96 /* Profile */,
 				469140232B82B5380081BD96 /* ButtonView.swift */,
+				466D5AFD2B83D0C2009669FB /* CustomAlertView.swift */,
 				469140342B82BD670081BD96 /* InputView.swift */,
+				466D5AFB2B834075009669FB /* BirthDatePickerView.swift */,
 				469140252B82B5670081BD96 /* Extensions.swift */,
+				465DAF422B8A5CD900677CA8 /* ObjectDetector.mlmodel */,
 				469140272B82B9030081BD96 /* GoogleService-Info.plist */,
 				46913FE52B82ACD70081BD96 /* Assets.xcassets */,
 				46913FE72B82ACD70081BD96 /* BasketballLab.entitlements */,
@@ -190,6 +234,8 @@
 			children = (
 				4691401C2B82B3D20081BD96 /* User.swift */,
 				4691401E2B82B4280081BD96 /* BasketballStats.swift */,
+				4691403D2B8317FA0081BD96 /* LocalData.swift */,
+				465DAF402B8A4F7800677CA8 /* Drills.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -368,7 +414,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4691403E2B8317FA0081BD96 /* LocalData.swift in Sources */,
+				466D5AFC2B834075009669FB /* BirthDatePickerView.swift in Sources */,
 				469140352B82BD670081BD96 /* InputView.swift in Sources */,
+				466D5B082B884807009669FB /* PreviewView.swift in Sources */,
 				469140162B82B3580081BD96 /* ProfileView.swift in Sources */,
 				469140142B82B3350081BD96 /* StatBar.swift in Sources */,
 				4691401A2B82B3AB0081BD96 /* SettingsRowView.swift in Sources */,
@@ -378,11 +427,18 @@
 				469140262B82B5670081BD96 /* Extensions.swift in Sources */,
 				469140372B82BEE50081BD96 /* LoginView.swift in Sources */,
 				469140182B82B3A30081BD96 /* ProfileSettingsView.swift in Sources */,
+				466D5AFE2B83D0C2009669FB /* CustomAlertView.swift in Sources */,
+				466D5B012B8696B9009669FB /* WorkoutsView.swift in Sources */,
 				469140312B82BCFB0081BD96 /* AuthViewModel.swift in Sources */,
 				46913FE22B82ACD50081BD96 /* BasketballLabApp.swift in Sources */,
+				465DAF412B8A4F7800677CA8 /* Drills.swift in Sources */,
+				466D5B052B86E73D009669FB /* CameraPreviewView.swift in Sources */,
 				4691401D2B82B3D20081BD96 /* User.swift in Sources */,
+				465DAF3F2B8984E800677CA8 /* CameraView.swift in Sources */,
 				469140392B82CCB60081BD96 /* MainView.swift in Sources */,
+				465DAF3D2B89361100677CA8 /* CameraViewModel.swift in Sources */,
 				469140242B82B5380081BD96 /* ButtonView.swift in Sources */,
+				465DAF432B8A5CD900677CA8 /* ObjectDetector.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +602,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is needed for footage analysis";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -584,6 +641,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is needed for footage analysis";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

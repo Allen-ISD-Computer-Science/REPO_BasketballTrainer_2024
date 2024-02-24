@@ -9,7 +9,6 @@ import SwiftUI
 
 struct LoginView: View {
     
-    
     @State private var email = ""
     @State private var password = ""
     @EnvironmentObject var authViewModel : AuthViewModel
@@ -36,7 +35,7 @@ struct LoginView: View {
                 
                 
                 
-                Button {
+                Button { //Sign in button
                     Task {
                         try await authViewModel.signIn(withEmail: email, password: password)
                     }
@@ -45,6 +44,10 @@ struct LoginView: View {
                         .background(Color.blue).foregroundColor(Color.white).cornerRadius(10)
                         .padding(.top, 60)
                 }
+                .disabled(!formIsValid)
+                    .opacity(formIsValid ? 1.0 : 0.6)
+                    .alert(authViewModel.errorMessage ?? "", isPresented: $authViewModel.alertShowing) { Button("OK", role: .cancel) { } }
+                
                 
                 Spacer()
                 
@@ -59,11 +62,15 @@ struct LoginView: View {
 
                     
                 }
-                
             }
         }
     }
-    
+}
+
+extension LoginView : AuthenticationFormProtocol {
+    var formIsValid : Bool {
+        return !email.isEmpty && email.contains("@") && !password.isEmpty
+    }
 }
 
 #Preview {

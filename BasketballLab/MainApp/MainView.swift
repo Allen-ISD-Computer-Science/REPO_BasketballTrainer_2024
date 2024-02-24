@@ -17,12 +17,12 @@ struct MainView: View {
                     Label("My Profile", systemImage: "person.crop.square.filled.and.at.rectangle")
                 }
             
-            Text("workout")
+            ProfileSettingsView()
                 .tabItem {
                     Label("Workouts", systemImage: "basketball")
                 }
             
-            Text("Placeholder")
+            WorkoutsView()
                 .tabItem {
                     Label("Friends", systemImage: "figure.2")
                         .font(.caption2)
@@ -33,5 +33,5 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView()
+    MainView().environmentObject(AuthViewModel())
 }

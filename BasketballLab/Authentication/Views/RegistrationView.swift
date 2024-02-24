@@ -43,10 +43,76 @@ struct RegistrationView: View {
                 
                 VStack(spacing: 24) {
                     
-                    InputView(text: $email, title: "Email Address", placeholder: "Enter email", autoCaps: false)
-                    InputView(text: $fullName, title: "Full Name", placeholder: "Enter full name", autoCaps: true)
-                    InputView(text: $password, title: "Create password", placeholder: "Create password", autoCaps: false, isSecureField: true)
-                    InputView(text: $confirmedPassword, title: "Confirm password", placeholder: "Confirm password", autoCaps: false, isSecureField: true)
+                    
+                    
+                    ZStack(alignment: .trailing) {
+                        InputView(text: $email, title: "Email Address", placeholder: "Enter email", autoCaps: false)
+                        
+                        if !email.isEmpty {
+                            if email.contains("@") && email.contains(".") && (email.hasSuffix("com") || email.hasSuffix("net") || email.hasSuffix("gov") || email.hasSuffix("edu") || email.hasSuffix("org")) && !email.contains(" ") {
+                            Image(systemName: "checkmark.circle.fill").padding(.top, 22).padding(.trailing, 8)
+                                .imageScale(.large)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(.systemGreen))
+                        } else {
+                            Image(systemName: "xmark.circle.fill").padding(.top, 22).padding(.trailing, 8)
+                                .imageScale(.large)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(.systemRed))
+                        }
+                    }
+                    }
+                    
+                    
+                    
+                    ZStack(alignment: .trailing) {
+                        InputView(text: $fullName, title: "Full Name", placeholder: "Enter full name", autoCaps: true)
+                        if !fullName.isEmpty {
+                            Image(systemName: "checkmark.circle.fill").padding(.top, 22).padding(.trailing, 8)
+                                .imageScale(.large)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(.systemGreen))
+                        }
+                    }
+                    
+                    
+                    
+                    
+                    ZStack(alignment: .trailing) {
+                        InputView(text: $password, title: "Create password", placeholder: "Create password", autoCaps: false, isSecureField: true)
+                        if !password.isEmpty {
+                            if password.count >= 6 {
+                                Image(systemName: "checkmark.circle.fill").padding(.top, 22).padding(.trailing, 8)
+                                    .imageScale(.large)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color(.systemGreen))
+                            } else {
+                                Image(systemName: "xmark.circle.fill").padding(.top, 22).padding(.trailing, 8)
+                                    .imageScale(.large)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color(.systemRed))
+                            }
+                        }
+                    }
+                    
+                    ZStack(alignment: .trailing) {
+                        InputView(text: $confirmedPassword, title: "Confirm password", placeholder: "Confirm password", autoCaps: false, isSecureField: true)
+                        if !password.isEmpty && !confirmedPassword.isEmpty {
+                            if password == confirmedPassword {
+                                Image(systemName: "checkmark.circle.fill").padding(.top, 22).padding(.trailing, 8)
+                                    .imageScale(.large)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color(.systemGreen))
+                            } else {
+                                Image(systemName: "xmark.circle.fill").padding(.top, 22).padding(.trailing, 8)
+                                    .imageScale(.large)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color(.systemRed))
+                                
+                            }
+                        }
+                    }
+                    
                     }.padding([.top, .bottom], 20)
                 
                 
@@ -59,7 +125,9 @@ struct RegistrationView: View {
                     ButtonView(text: "Create Account", imageName: "arrow.right", widthProportion: (3/4))
                         .background(Color.blue).foregroundColor(Color.white).cornerRadius(10)
                         .padding(.top, 0)
-                }
+                }.disabled(!formIsValid)
+                    .opacity(formIsValid ? 1.0 : 0.6)
+                    .alert(authViewModel.errorMessage ?? "", isPresented: $authViewModel.alertShowing) { Button("OK", role: .cancel) { } }
                 
                 Spacer()
                 
@@ -70,13 +138,23 @@ struct RegistrationView: View {
                     } label : {
                         Text("Log In")
                     }
-                    
                 }
-                                
             }
         }
     }
 }
+
+
+extension RegistrationView : AuthenticationFormProtocol {
+    var formIsValid : Bool {
+        return !email.isEmpty 
+        && email.contains("@")
+        && !password.isEmpty
+        && !fullName.isEmpty
+        && confirmedPassword == password
+    }
+}
+
 
 #Preview {
     RegistrationView().environmentObject(AuthViewModel())

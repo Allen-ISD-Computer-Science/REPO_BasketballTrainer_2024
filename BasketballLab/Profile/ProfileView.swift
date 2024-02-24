@@ -18,12 +18,15 @@ struct ProfileView: View {
             
             
             HStack {
-                Text("Hi , Onik").padding()
+                Text("Hi , onikh").padding()
                     .font(.largeTitle)
                     .bold()
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.1)
                     .frame(alignment: .trailing)
                     .border(.green)
-                    .padding([.top, .leading], 40)
+                    .padding(.top, 40).padding(.leading, 0)
+                    
                 Spacer()
             }
             

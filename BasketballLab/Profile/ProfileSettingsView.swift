@@ -8,60 +8,69 @@
 import SwiftUI
 
 struct ProfileSettingsView: View {
+    
+    @EnvironmentObject var authViewModel : AuthViewModel
+    
     var body: some View {
         
-        var name = "Onik Hoque"
-        var email = "onikh738@gmail.com"
-        var versionNumber = "1.0.0"
         
-        List {
-            Section {
-                HStack {
-                    Text(User.mockUser.initials)
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .frame(width: 72, height: 72)
-                        .background(Color(.systemGray))
-                        .clipShape(Circle())
+        if let user = authViewModel.currentUser {
+            List {
+                Section {
+                    HStack {
+                        Text(user.initials)
+                            .font(.title)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                            .frame(width: 72, height: 72)
+                            .background(Color(.systemGray))
+                            .clipShape(Circle())
+                        
+                        VStack(alignment: .leading) {
+                            Text(user.fullName)
+                            Text(user.email).accentColor(.gray)
+                        }.padding([.leading], 10)
+                    }
+                }
+                
+                Section("general") {
                     
-                    VStack(alignment: .leading) {
-                        Text(name)
-                        Text(email).accentColor(.gray)
-                    }.padding([.leading], 10)
+                    HStack {
+                        SettingsRowView(imageName: "gear", title: "Version", tintColor: Color.gray)
+                        Spacer()
+                        Text(BasketballLab.version).padding([.trailing], 10)
+                    }
                 }
-            }
+                
+                Section("account") {
+                    
+                    Button {
+                        authViewModel.signOut()
+                    } label : {
+                        SettingsRowView(imageName: "arrow.left", title: "Sign Out", tintColor: Color.gray)
+                    }
+                    
+                    Button {
+                        Task {
+                            try await authViewModel.deleteAccount()
+                        }
+                    } label : {
+                        SettingsRowView(imageName: "trash", title: "Delete Account", tintColor: Color.red)
+                    }
+                    
+                }
             
-            Section("general") {
-                
-                HStack {
-                    SettingsRowView(imageName: "gear", title: "Version", tintColor: Color.gray)
-                    Spacer()
-                    Text(versionNumber).padding([.trailing], 10)
-                }
-            }
-            
-            Section("account") {
-                
-                Button {
-                    print("signed out")
-                } label : {
-                    SettingsRowView(imageName: "arrow.left", title: "Sign Out", tintColor: Color.gray)
-                }
-                
-                Button {
-                    print("signed out")
-                } label : {
-                    SettingsRowView(imageName: "trash", title: "Delete Account", tintColor: Color.red)
-                }
-                
-            }
         }
+            
+        } else {
+            Text("Unable to display user details. Relaunch and sign in.")
+        }
+        
         
         
     }
 }
 
 #Preview {
-    ProfileSettingsView()
+    ProfileSettingsView().environmentObject(AuthViewModel())
 }

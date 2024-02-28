@@ -8,15 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		465DAF3D2B89361100677CA8 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DAF3C2B89361100677CA8 /* CameraViewModel.swift */; };
-		465DAF3F2B8984E800677CA8 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DAF3E2B8984E800677CA8 /* CameraView.swift */; };
+		465DAF3F2B8984E800677CA8 /* DribbleDetectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DAF3E2B8984E800677CA8 /* DribbleDetectorView.swift */; };
 		465DAF412B8A4F7800677CA8 /* Drills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DAF402B8A4F7800677CA8 /* Drills.swift */; };
-		465DAF432B8A5CD900677CA8 /* ObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 465DAF422B8A5CD900677CA8 /* ObjectDetector.mlmodel */; };
+		466306F32B8AD4F300201529 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466306F22B8AD4F300201529 /* ModelManager.swift */; };
 		466D5AFC2B834075009669FB /* BirthDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D5AFB2B834075009669FB /* BirthDatePickerView.swift */; };
 		466D5AFE2B83D0C2009669FB /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D5AFD2B83D0C2009669FB /* CustomAlertView.swift */; };
 		466D5B012B8696B9009669FB /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D5B002B8696B9009669FB /* WorkoutsView.swift */; };
 		466D5B052B86E73D009669FB /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D5B042B86E73D009669FB /* CameraPreviewView.swift */; };
 		466D5B082B884807009669FB /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D5B072B884807009669FB /* PreviewView.swift */; };
-		46913FE22B82ACD50081BD96 /* BasketballLabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46913FE12B82ACD50081BD96 /* BasketballLabApp.swift */; };
 		46913FE42B82ACD50081BD96 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46913FE32B82ACD50081BD96 /* ContentView.swift */; };
 		46913FE62B82ACD70081BD96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46913FE52B82ACD70081BD96 /* Assets.xcassets */; };
 		46913FEA2B82ACD70081BD96 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46913FE92B82ACD70081BD96 /* Preview Assets.xcassets */; };
@@ -42,6 +41,14 @@
 		469140392B82CCB60081BD96 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140382B82CCB60081BD96 /* MainView.swift */; };
 		4691403C2B82D9570081BD96 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4691403B2B82D9570081BD96 /* .gitignore */; };
 		4691403E2B8317FA0081BD96 /* LocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4691403D2B8317FA0081BD96 /* LocalData.swift */; };
+		46B87E592B8D7C4E005F34C5 /* BasketballLabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B87E582B8D7C4E005F34C5 /* BasketballLabApp.swift */; };
+		46B87E5F2B8D8B18005F34C5 /* best.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 46B87E5E2B8D8B18005F34C5 /* best.mlpackage */; };
+		46B87E612B8D8DE9005F34C5 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B87E602B8D8DE9005F34C5 /* Ball.swift */; };
+		46B87E642B8D8E4D005F34C5 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 46B87E632B8D8E4D005F34C5 /* DequeModule */; };
+		46B87E672B8E2B10005F34C5 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B87E662B8E2B10005F34C5 /* Frame.swift */; };
+		46B87E692B8E348E005F34C5 /* FrameBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B87E682B8E348E005F34C5 /* FrameBuffer.swift */; };
+		46B87E6C2B8E9743005F34C5 /* VisionCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B87E6B2B8E9743005F34C5 /* VisionCalculations.swift */; };
+		46B87E6E2B8EE047005F34C5 /* DribbleDetectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B87E6D2B8EE047005F34C5 /* DribbleDetectorDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,16 +70,15 @@
 
 /* Begin PBXFileReference section */
 		465DAF3C2B89361100677CA8 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
-		465DAF3E2B8984E800677CA8 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		465DAF3E2B8984E800677CA8 /* DribbleDetectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbleDetectorView.swift; sourceTree = "<group>"; };
 		465DAF402B8A4F7800677CA8 /* Drills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drills.swift; sourceTree = "<group>"; };
-		465DAF422B8A5CD900677CA8 /* ObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectDetector.mlmodel; sourceTree = "<group>"; };
+		466306F22B8AD4F300201529 /* ModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
 		466D5AFB2B834075009669FB /* BirthDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDatePickerView.swift; sourceTree = "<group>"; };
 		466D5AFD2B83D0C2009669FB /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		466D5B002B8696B9009669FB /* WorkoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsView.swift; sourceTree = "<group>"; };
 		466D5B042B86E73D009669FB /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
 		466D5B072B884807009669FB /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		46913FDE2B82ACD50081BD96 /* BasketballLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasketballLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		46913FE12B82ACD50081BD96 /* BasketballLabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballLabApp.swift; sourceTree = "<group>"; };
 		46913FE32B82ACD50081BD96 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		46913FE52B82ACD70081BD96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46913FE72B82ACD70081BD96 /* BasketballLab.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BasketballLab.entitlements; sourceTree = "<group>"; };
@@ -98,6 +104,13 @@
 		469140382B82CCB60081BD96 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4691403B2B82D9570081BD96 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		4691403D2B8317FA0081BD96 /* LocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalData.swift; sourceTree = "<group>"; };
+		46B87E582B8D7C4E005F34C5 /* BasketballLabApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketballLabApp.swift; sourceTree = "<group>"; };
+		46B87E5E2B8D8B18005F34C5 /* best.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; name = best.mlpackage; path = ../../YOLOv8/best.mlpackage; sourceTree = "<group>"; };
+		46B87E602B8D8DE9005F34C5 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
+		46B87E662B8E2B10005F34C5 /* Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
+		46B87E682B8E348E005F34C5 /* FrameBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameBuffer.swift; sourceTree = "<group>"; };
+		46B87E6B2B8E9743005F34C5 /* VisionCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionCalculations.swift; sourceTree = "<group>"; };
+		46B87E6D2B8EE047005F34C5 /* DribbleDetectorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbleDetectorDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +119,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4691402B2B82B9CF0081BD96 /* FirebaseAuth in Frameworks */,
+				46B87E642B8D8E4D005F34C5 /* DequeModule in Frameworks */,
 				4691402D2B82B9CF0081BD96 /* FirebaseFirestore in Frameworks */,
 				4691402F2B82B9CF0081BD96 /* FirebaseFirestoreSwift in Frameworks */,
 			);
@@ -133,9 +147,11 @@
 			children = (
 				466D5B062B883CF0009669FB /* Experiment */,
 				466D5B002B8696B9009669FB /* WorkoutsView.swift */,
-				465DAF3E2B8984E800677CA8 /* CameraView.swift */,
+				465DAF3E2B8984E800677CA8 /* DribbleDetectorView.swift */,
+				46B87E6D2B8EE047005F34C5 /* DribbleDetectorDelegate.swift */,
 				466D5B042B86E73D009669FB /* CameraPreviewView.swift */,
 				465DAF3C2B89361100677CA8 /* CameraViewModel.swift */,
+				466306F22B8AD4F300201529 /* ModelManager.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -172,19 +188,20 @@
 		46913FE02B82ACD50081BD96 /* BasketballLab */ = {
 			isa = PBXGroup;
 			children = (
-				46913FE12B82ACD50081BD96 /* BasketballLabApp.swift */,
+				46B87E582B8D7C4E005F34C5 /* BasketballLabApp.swift */,
 				46913FE32B82ACD50081BD96 /* ContentView.swift */,
 				466D5AFF2B8695AC009669FB /* Camera */,
 				4691403A2B82CE150081BD96 /* MainApp */,
 				469140202B82B4EF0081BD96 /* Authentication */,
 				4691401B2B82B3C10081BD96 /* DataModels */,
+				46B87E4C2B8D6365005F34C5 /* Resources */,
 				469140122B82B3230081BD96 /* Profile */,
 				469140232B82B5380081BD96 /* ButtonView.swift */,
 				466D5AFD2B83D0C2009669FB /* CustomAlertView.swift */,
 				469140342B82BD670081BD96 /* InputView.swift */,
 				466D5AFB2B834075009669FB /* BirthDatePickerView.swift */,
 				469140252B82B5670081BD96 /* Extensions.swift */,
-				465DAF422B8A5CD900677CA8 /* ObjectDetector.mlmodel */,
+				46B87E5E2B8D8B18005F34C5 /* best.mlpackage */,
 				469140272B82B9030081BD96 /* GoogleService-Info.plist */,
 				46913FE52B82ACD70081BD96 /* Assets.xcassets */,
 				46913FE72B82ACD70081BD96 /* BasketballLab.entitlements */,
@@ -232,6 +249,7 @@
 		4691401B2B82B3C10081BD96 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
+				46B87E652B8E2A25005F34C5 /* VisionDataModels */,
 				4691401C2B82B3D20081BD96 /* User.swift */,
 				4691401E2B82B4280081BD96 /* BasketballStats.swift */,
 				4691403D2B8317FA0081BD96 /* LocalData.swift */,
@@ -274,6 +292,24 @@
 			path = MainApp;
 			sourceTree = "<group>";
 		};
+		46B87E4C2B8D6365005F34C5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		46B87E652B8E2A25005F34C5 /* VisionDataModels */ = {
+			isa = PBXGroup;
+			children = (
+				46B87E602B8D8DE9005F34C5 /* Ball.swift */,
+				46B87E662B8E2B10005F34C5 /* Frame.swift */,
+				46B87E682B8E348E005F34C5 /* FrameBuffer.swift */,
+				46B87E6B2B8E9743005F34C5 /* VisionCalculations.swift */,
+			);
+			path = VisionDataModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -294,6 +330,7 @@
 				4691402A2B82B9CF0081BD96 /* FirebaseAuth */,
 				4691402C2B82B9CF0081BD96 /* FirebaseFirestore */,
 				4691402E2B82B9CF0081BD96 /* FirebaseFirestoreSwift */,
+				46B87E632B8D8E4D005F34C5 /* DequeModule */,
 			);
 			productName = BasketballLab;
 			productReference = 46913FDE2B82ACD50081BD96 /* BasketballLab.app */;
@@ -369,6 +406,7 @@
 			mainGroup = 46913FD52B82ACD50081BD96;
 			packageReferences = (
 				469140292B82B9CF0081BD96 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				46B87E622B8D8E4D005F34C5 /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			productRefGroup = 46913FDF2B82ACD50081BD96 /* Products */;
 			projectDirPath = "";
@@ -415,12 +453,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4691403E2B8317FA0081BD96 /* LocalData.swift in Sources */,
+				46B87E692B8E348E005F34C5 /* FrameBuffer.swift in Sources */,
 				466D5AFC2B834075009669FB /* BirthDatePickerView.swift in Sources */,
+				46B87E672B8E2B10005F34C5 /* Frame.swift in Sources */,
+				46B87E5F2B8D8B18005F34C5 /* best.mlpackage in Sources */,
 				469140352B82BD670081BD96 /* InputView.swift in Sources */,
 				466D5B082B884807009669FB /* PreviewView.swift in Sources */,
+				46B87E6E2B8EE047005F34C5 /* DribbleDetectorDelegate.swift in Sources */,
 				469140162B82B3580081BD96 /* ProfileView.swift in Sources */,
 				469140142B82B3350081BD96 /* StatBar.swift in Sources */,
 				4691401A2B82B3AB0081BD96 /* SettingsRowView.swift in Sources */,
+				46B87E612B8D8DE9005F34C5 /* Ball.swift in Sources */,
 				469140332B82BD300081BD96 /* RegistrationView.swift in Sources */,
 				46913FE42B82ACD50081BD96 /* ContentView.swift in Sources */,
 				4691401F2B82B4280081BD96 /* BasketballStats.swift in Sources */,
@@ -429,16 +472,17 @@
 				469140182B82B3A30081BD96 /* ProfileSettingsView.swift in Sources */,
 				466D5AFE2B83D0C2009669FB /* CustomAlertView.swift in Sources */,
 				466D5B012B8696B9009669FB /* WorkoutsView.swift in Sources */,
+				46B87E6C2B8E9743005F34C5 /* VisionCalculations.swift in Sources */,
 				469140312B82BCFB0081BD96 /* AuthViewModel.swift in Sources */,
-				46913FE22B82ACD50081BD96 /* BasketballLabApp.swift in Sources */,
 				465DAF412B8A4F7800677CA8 /* Drills.swift in Sources */,
 				466D5B052B86E73D009669FB /* CameraPreviewView.swift in Sources */,
 				4691401D2B82B3D20081BD96 /* User.swift in Sources */,
-				465DAF3F2B8984E800677CA8 /* CameraView.swift in Sources */,
+				465DAF3F2B8984E800677CA8 /* DribbleDetectorView.swift in Sources */,
+				46B87E592B8D7C4E005F34C5 /* BasketballLabApp.swift in Sources */,
+				466306F32B8AD4F300201529 /* ModelManager.swift in Sources */,
 				469140392B82CCB60081BD96 /* MainView.swift in Sources */,
 				465DAF3D2B89361100677CA8 /* CameraViewModel.swift in Sources */,
 				469140242B82B5380081BD96 /* ButtonView.swift in Sources */,
-				465DAF432B8A5CD900677CA8 /* ObjectDetector.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -807,6 +851,14 @@
 				minimumVersion = 10.21.0;
 			};
 		};
+		46B87E622B8D8E4D005F34C5 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -824,6 +876,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 469140292B82B9CF0081BD96 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
+		};
+		46B87E632B8D8E4D005F34C5 /* DequeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46B87E622B8D8E4D005F34C5 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = DequeModule;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -9,14 +9,16 @@ import SwiftUI
 
 struct WorkoutsView: View {
     
+    private var cameraViewModel = CameraViewModel()
+    
     var body: some View {
         
         NavigationStack() {
             NavigationLink("String") {
-                CameraView()
+                DribbleDetectorView(cameraViewModel: cameraViewModel).toolbar(.hidden, for: .tabBar)
             }
         }
-        .navigationTitle("Workouts")
+        
     }
 }
 

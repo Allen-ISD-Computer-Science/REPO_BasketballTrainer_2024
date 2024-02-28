@@ -9,20 +9,26 @@ import Foundation
 import SwiftUI
 import Observation
 import AVFoundation
+import Vision
+import CoreML
 
 class ViewData {
     var captureDevice : AVCaptureDevice?
-    var captureSession : AVCaptureSession?
-    var stillImage : AVCapturePhotoOutput?
     var rotationCoordinator : AVCaptureDevice.RotationCoordinator?
     var previewObservation : NSKeyValueObservation?
 }
 
 
-@Observable class CameraViewModel : NSObject, AVCapturePhotoCaptureDelegate {
+@Observable class CameraViewModel : NSObject {
     
-    var path = NavigationPath()
-    var picture : UIImage?
+    var captureSession = AVCaptureSession()
+    var output = AVCaptureVideoDataOutput()
+    var captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
+    
+    var requests = [VNRequest]()
+    var frameBuffer = FrameBuffer(maxLength: 60)
+    
+    var configured = false
     
     @ObservationIgnored var cameraView : CameraPreviewView!
     @ObservationIgnored var viewData : ViewData!
@@ -30,13 +36,21 @@ class ViewData {
     override init() {
         cameraView = CameraPreviewView()
         viewData = ViewData()
+        print("initialized")
+        
+    }
+    
+    deinit {
+        print("deinitialized")
     }
     
     func getAuthorization() async {
+        self.setupDetector()
         let granted = await AVCaptureDevice.requestAccess(for: .video)
         await MainActor.run {
-            if granted {
+            if granted && configured == false {
                 self.prepareCamera()
+                configured = true
             } else {
                 print("not authorized")
             }
@@ -45,7 +59,8 @@ class ViewData {
     
     func prepareCamera() {
         
-        viewData.captureSession = AVCaptureSession()
+        self.captureSession.beginConfiguration()
+        self.captureSession.sessionPreset = .iFrame960x540
         viewData.captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
         
         if let _ = try? viewData.captureDevice?.lockForConfiguration() {
@@ -55,18 +70,13 @@ class ViewData {
         
         if let device = viewData.captureDevice {
             if let input = try? AVCaptureDeviceInput(device: device) {
-                viewData.captureSession?.addInput(input)
-                
-                viewData.stillImage = AVCapturePhotoOutput()
-                if viewData.stillImage != nil {
-                    
-                    viewData.captureSession?.addOutput(viewData.stillImage!)
-                  /*  if let max = viewData.captureDevice?.activeFormat.supportedMaxPhotoDimensions.last {
-                        viewData.stillImage?.maxPhotoDimensions = max
-                    } */
-                    
-                }
-                showCamera()
+                self.captureSession.addInput(input)
+                self.captureSession.addOutput(self.output)
+                                self.output.alwaysDiscardsLateVideoFrames = true
+                self.output.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_420YpCbCr8BiPlanarFullRange)]
+                self.output.setSampleBufferDelegate(self, queue: DispatchQueue(label: "camera_frame_processing_queue"))
+                self.captureSession.commitConfiguration()
+                print("configured")
             } else {
                 print("Not authorized1")
             }
@@ -75,9 +85,11 @@ class ViewData {
         }
     }
     
+    
+    
     func showCamera() {
         let previewLayer = cameraView.view.layer as? AVCaptureVideoPreviewLayer
-        previewLayer?.session = viewData.captureSession
+        previewLayer?.session = self.captureSession
         
         if let device = viewData.captureDevice, let preview = previewLayer {
             viewData.rotationCoordinator = AVCaptureDevice.RotationCoordinator(device: device, previewLayer: preview)
@@ -87,44 +99,64 @@ class ViewData {
             })
         }
         Task(priority: .background) {
-            viewData.captureSession?.startRunning()
+            self.captureSession.startRunning()
             print("began running capture session")
         }
     }
     
-    func takePicture() {
-        let settings = AVCapturePhotoSettings()
-        if let max = viewData.captureDevice?.activeFormat.supportedMaxPhotoDimensions.last {
-            settings.maxPhotoDimensions = max
+}
+
+extension CameraViewModel : AVCaptureVideoDataOutputSampleBufferDelegate {
+    
+    
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        
+        guard let pixelBuffer : CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {print("unable to make buffer");return}
+        
+        let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .down, options: [:])
+        
+        do {
+            try imageRequestHandler.perform(self.requests)
+        } catch let error {
+            print(error)
         }
-        viewData.stillImage?.capturePhoto(with: settings, delegate: self)
+        
     }
     
     
-    private func photoOutput(_ output: AVCaptureOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+    func setupDetector() { //sets up the model
+        let modelURL = Bundle.main.url(forResource: "best", withExtension: "mlmodelc")
         
-        let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene
-        let scale = scene?.screen.scale ?? 1
-        let orientationAngle = viewData.rotationCoordinator!.videoRotationAngleForHorizonLevelCapture
-        var imageOrientation : UIImage.Orientation!
-        
-        switch orientationAngle {
-        case 90.0:
-            imageOrientation = .right
-        case 270.0:
-            imageOrientation = .left
-        case 0.0:
-            imageOrientation = .up
-        case 180.0:
-            imageOrientation = .down
-        default:
-            imageOrientation = .right
+        do {
+            let visionModel = try VNCoreMLModel(for: MLModel(contentsOf: modelURL!))
+            let recognitions = VNCoreMLRequest(model: visionModel, completionHandler: detectionDidComplete)
+            self.requests = [recognitions]
+        } catch let error {
+            print(error)
         }
-        
-        if let imageData = photo.cgImageRepresentation() {
-            picture = UIImage(cgImage: imageData, scale: scale, orientation: imageOrientation)
-            path = NavigationPath()
-        }
+    }
+    
+    
+    
+    func detectionDidComplete(request: VNRequest, error: Error?) {
+        DispatchQueue.main.async(execute: {
+            if let results = request.results {
+                let ball = results.first as? VNRecognizedObjectObservation
+                
+                if ball != nil {
+                    self.frameBuffer.addLocationFrame(frame: Frame(ball: Ball(
+                        x1: 1,
+                        y1: Int(UIScreen.main.bounds.width*(ball?.boundingBox.minY)!),
+                        x2: 1,
+                        y2: 1)))
+                    print(Int(UIScreen.main.bounds.width*(ball?.boundingBox.minY)!))
+                } else {
+                    self.frameBuffer.addLocationFrame(frame: Frame(ball: nil))
+                }
+                
+                VisionCalculations.dribbleDetection(frameBuffer: self.frameBuffer)
+            }
+        })
     }
     
     

@@ -1,0 +1,904 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		464A9E852B900BEF0065478B /* DribbleSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A9E842B900BEF0065478B /* DribbleSession.swift */; };
+		465DAF3D2B89361100677CA8 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DAF3C2B89361100677CA8 /* CameraViewModel.swift */; };
+		465DAF3F2B8984E800677CA8 /* DribbleDetectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DAF3E2B8984E800677CA8 /* DribbleDetectorView.swift */; };
+		465DAF412B8A4F7800677CA8 /* Drills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DAF402B8A4F7800677CA8 /* Drills.swift */; };
+		466306F32B8AD4F300201529 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466306F22B8AD4F300201529 /* ModelManager.swift */; };
+		466D5AFC2B834075009669FB /* BirthDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D5AFB2B834075009669FB /* BirthDatePickerView.swift */; };
+		466D5AFE2B83D0C2009669FB /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D5AFD2B83D0C2009669FB /* CustomAlertView.swift */; };
+		466D5B012B8696B9009669FB /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D5B002B8696B9009669FB /* WorkoutsView.swift */; };
+		466D5B052B86E73D009669FB /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D5B042B86E73D009669FB /* CameraPreviewView.swift */; };
+		466D5B082B884807009669FB /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D5B072B884807009669FB /* PreviewView.swift */; };
+		46913FE42B82ACD50081BD96 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46913FE32B82ACD50081BD96 /* ContentView.swift */; };
+		46913FE62B82ACD70081BD96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46913FE52B82ACD70081BD96 /* Assets.xcassets */; };
+		46913FEA2B82ACD70081BD96 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46913FE92B82ACD70081BD96 /* Preview Assets.xcassets */; };
+		46913FF42B82ACD70081BD96 /* BasketballLabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46913FF32B82ACD70081BD96 /* BasketballLabTests.swift */; };
+		46913FFE2B82ACD70081BD96 /* BasketballLabUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46913FFD2B82ACD70081BD96 /* BasketballLabUITests.swift */; };
+		469140002B82ACD70081BD96 /* BasketballLabUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46913FFF2B82ACD70081BD96 /* BasketballLabUITestsLaunchTests.swift */; };
+		469140142B82B3350081BD96 /* StatBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140132B82B3350081BD96 /* StatBar.swift */; };
+		469140162B82B3580081BD96 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140152B82B3580081BD96 /* ProfileView.swift */; };
+		469140182B82B3A30081BD96 /* ProfileSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140172B82B3A30081BD96 /* ProfileSettingsView.swift */; };
+		4691401A2B82B3AB0081BD96 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140192B82B3AB0081BD96 /* SettingsRowView.swift */; };
+		4691401D2B82B3D20081BD96 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4691401C2B82B3D20081BD96 /* User.swift */; };
+		4691401F2B82B4280081BD96 /* BasketballStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4691401E2B82B4280081BD96 /* BasketballStats.swift */; };
+		469140242B82B5380081BD96 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140232B82B5380081BD96 /* ButtonView.swift */; };
+		469140262B82B5670081BD96 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140252B82B5670081BD96 /* Extensions.swift */; };
+		469140282B82B9040081BD96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 469140272B82B9030081BD96 /* GoogleService-Info.plist */; };
+		4691402B2B82B9CF0081BD96 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4691402A2B82B9CF0081BD96 /* FirebaseAuth */; };
+		4691402D2B82B9CF0081BD96 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4691402C2B82B9CF0081BD96 /* FirebaseFirestore */; };
+		4691402F2B82B9CF0081BD96 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4691402E2B82B9CF0081BD96 /* FirebaseFirestoreSwift */; };
+		469140312B82BCFB0081BD96 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140302B82BCFB0081BD96 /* AuthViewModel.swift */; };
+		469140332B82BD300081BD96 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140322B82BD300081BD96 /* RegistrationView.swift */; };
+		469140352B82BD670081BD96 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140342B82BD670081BD96 /* InputView.swift */; };
+		469140372B82BEE50081BD96 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140362B82BEE50081BD96 /* LoginView.swift */; };
+		469140392B82CCB60081BD96 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140382B82CCB60081BD96 /* MainView.swift */; };
+		4691403C2B82D9570081BD96 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4691403B2B82D9570081BD96 /* .gitignore */; };
+		4691403E2B8317FA0081BD96 /* LocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4691403D2B8317FA0081BD96 /* LocalData.swift */; };
+		46B87E592B8D7C4E005F34C5 /* BasketballLabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B87E582B8D7C4E005F34C5 /* BasketballLabApp.swift */; };
+		46B87E5F2B8D8B18005F34C5 /* best.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 46B87E5E2B8D8B18005F34C5 /* best.mlpackage */; };
+		46B87E612B8D8DE9005F34C5 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B87E602B8D8DE9005F34C5 /* Ball.swift */; };
+		46B87E642B8D8E4D005F34C5 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 46B87E632B8D8E4D005F34C5 /* DequeModule */; };
+		46B87E672B8E2B10005F34C5 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B87E662B8E2B10005F34C5 /* Frame.swift */; };
+		46B87E692B8E348E005F34C5 /* FrameBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B87E682B8E348E005F34C5 /* FrameBuffer.swift */; };
+		46B87E6C2B8E9743005F34C5 /* VisionCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B87E6B2B8E9743005F34C5 /* VisionCalculations.swift */; };
+		46B87E6E2B8EE047005F34C5 /* DribbleDetectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B87E6D2B8EE047005F34C5 /* DribbleDetectorDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		46913FF02B82ACD70081BD96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46913FD62B82ACD50081BD96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46913FDD2B82ACD50081BD96;
+			remoteInfo = BasketballLab;
+		};
+		46913FFA2B82ACD70081BD96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46913FD62B82ACD50081BD96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46913FDD2B82ACD50081BD96;
+			remoteInfo = BasketballLab;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		464A9E842B900BEF0065478B /* DribbleSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbleSession.swift; sourceTree = "<group>"; };
+		465DAF3C2B89361100677CA8 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		465DAF3E2B8984E800677CA8 /* DribbleDetectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbleDetectorView.swift; sourceTree = "<group>"; };
+		465DAF402B8A4F7800677CA8 /* Drills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drills.swift; sourceTree = "<group>"; };
+		466306F22B8AD4F300201529 /* ModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
+		466D5AFB2B834075009669FB /* BirthDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDatePickerView.swift; sourceTree = "<group>"; };
+		466D5AFD2B83D0C2009669FB /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
+		466D5B002B8696B9009669FB /* WorkoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsView.swift; sourceTree = "<group>"; };
+		466D5B042B86E73D009669FB /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		466D5B072B884807009669FB /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		46913FDE2B82ACD50081BD96 /* BasketballLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasketballLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		46913FE32B82ACD50081BD96 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		46913FE52B82ACD70081BD96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		46913FE72B82ACD70081BD96 /* BasketballLab.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BasketballLab.entitlements; sourceTree = "<group>"; };
+		46913FE92B82ACD70081BD96 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		46913FEF2B82ACD70081BD96 /* BasketballLabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasketballLabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46913FF32B82ACD70081BD96 /* BasketballLabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballLabTests.swift; sourceTree = "<group>"; };
+		46913FF92B82ACD70081BD96 /* BasketballLabUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasketballLabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46913FFD2B82ACD70081BD96 /* BasketballLabUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballLabUITests.swift; sourceTree = "<group>"; };
+		46913FFF2B82ACD70081BD96 /* BasketballLabUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballLabUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		469140132B82B3350081BD96 /* StatBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatBar.swift; sourceTree = "<group>"; };
+		469140152B82B3580081BD96 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		469140172B82B3A30081BD96 /* ProfileSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingsView.swift; sourceTree = "<group>"; };
+		469140192B82B3AB0081BD96 /* SettingsRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
+		4691401C2B82B3D20081BD96 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4691401E2B82B4280081BD96 /* BasketballStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketballStats.swift; sourceTree = "<group>"; };
+		469140232B82B5380081BD96 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		469140252B82B5670081BD96 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		469140272B82B9030081BD96 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		469140302B82BCFB0081BD96 /* AuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		469140322B82BD300081BD96 /* RegistrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		469140342B82BD670081BD96 /* InputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		469140362B82BEE50081BD96 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		469140382B82CCB60081BD96 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		4691403B2B82D9570081BD96 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		4691403D2B8317FA0081BD96 /* LocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalData.swift; sourceTree = "<group>"; };
+		46B87E582B8D7C4E005F34C5 /* BasketballLabApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketballLabApp.swift; sourceTree = "<group>"; };
+		46B87E5E2B8D8B18005F34C5 /* best.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; name = best.mlpackage; path = ../../YOLOv8/best.mlpackage; sourceTree = "<group>"; };
+		46B87E602B8D8DE9005F34C5 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
+		46B87E662B8E2B10005F34C5 /* Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
+		46B87E682B8E348E005F34C5 /* FrameBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameBuffer.swift; sourceTree = "<group>"; };
+		46B87E6B2B8E9743005F34C5 /* VisionCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionCalculations.swift; sourceTree = "<group>"; };
+		46B87E6D2B8EE047005F34C5 /* DribbleDetectorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbleDetectorDelegate.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		46913FDB2B82ACD50081BD96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4691402B2B82B9CF0081BD96 /* FirebaseAuth in Frameworks */,
+				46B87E642B8D8E4D005F34C5 /* DequeModule in Frameworks */,
+				4691402D2B82B9CF0081BD96 /* FirebaseFirestore in Frameworks */,
+				4691402F2B82B9CF0081BD96 /* FirebaseFirestoreSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46913FEC2B82ACD70081BD96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46913FF62B82ACD70081BD96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		464A9E832B900BCC0065478B /* DribbleDetector */ = {
+			isa = PBXGroup;
+			children = (
+				46B87E6D2B8EE047005F34C5 /* DribbleDetectorDelegate.swift */,
+				465DAF3E2B8984E800677CA8 /* DribbleDetectorView.swift */,
+				464A9E842B900BEF0065478B /* DribbleSession.swift */,
+			);
+			path = DribbleDetector;
+			sourceTree = "<group>";
+		};
+		466D5AFF2B8695AC009669FB /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				466D5B062B883CF0009669FB /* Experiment */,
+				466D5B002B8696B9009669FB /* WorkoutsView.swift */,
+				464A9E832B900BCC0065478B /* DribbleDetector */,
+				466D5B042B86E73D009669FB /* CameraPreviewView.swift */,
+				465DAF3C2B89361100677CA8 /* CameraViewModel.swift */,
+				466306F22B8AD4F300201529 /* ModelManager.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		466D5B062B883CF0009669FB /* Experiment */ = {
+			isa = PBXGroup;
+			children = (
+				466D5B072B884807009669FB /* PreviewView.swift */,
+			);
+			path = Experiment;
+			sourceTree = "<group>";
+		};
+		46913FD52B82ACD50081BD96 = {
+			isa = PBXGroup;
+			children = (
+				4691403B2B82D9570081BD96 /* .gitignore */,
+				46913FE02B82ACD50081BD96 /* BasketballLab */,
+				46913FF22B82ACD70081BD96 /* BasketballLabTests */,
+				46913FFC2B82ACD70081BD96 /* BasketballLabUITests */,
+				46913FDF2B82ACD50081BD96 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		46913FDF2B82ACD50081BD96 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				46913FDE2B82ACD50081BD96 /* BasketballLab.app */,
+				46913FEF2B82ACD70081BD96 /* BasketballLabTests.xctest */,
+				46913FF92B82ACD70081BD96 /* BasketballLabUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		46913FE02B82ACD50081BD96 /* BasketballLab */ = {
+			isa = PBXGroup;
+			children = (
+				46B87E582B8D7C4E005F34C5 /* BasketballLabApp.swift */,
+				46913FE32B82ACD50081BD96 /* ContentView.swift */,
+				466D5AFF2B8695AC009669FB /* Camera */,
+				4691403A2B82CE150081BD96 /* MainApp */,
+				469140202B82B4EF0081BD96 /* Authentication */,
+				4691401B2B82B3C10081BD96 /* DataModels */,
+				46B87E4C2B8D6365005F34C5 /* Resources */,
+				469140122B82B3230081BD96 /* Profile */,
+				469140232B82B5380081BD96 /* ButtonView.swift */,
+				466D5AFD2B83D0C2009669FB /* CustomAlertView.swift */,
+				469140342B82BD670081BD96 /* InputView.swift */,
+				466D5AFB2B834075009669FB /* BirthDatePickerView.swift */,
+				469140252B82B5670081BD96 /* Extensions.swift */,
+				46B87E5E2B8D8B18005F34C5 /* best.mlpackage */,
+				469140272B82B9030081BD96 /* GoogleService-Info.plist */,
+				46913FE52B82ACD70081BD96 /* Assets.xcassets */,
+				46913FE72B82ACD70081BD96 /* BasketballLab.entitlements */,
+				46913FE82B82ACD70081BD96 /* Preview Content */,
+			);
+			path = BasketballLab;
+			sourceTree = "<group>";
+		};
+		46913FE82B82ACD70081BD96 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				46913FE92B82ACD70081BD96 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		46913FF22B82ACD70081BD96 /* BasketballLabTests */ = {
+			isa = PBXGroup;
+			children = (
+				46913FF32B82ACD70081BD96 /* BasketballLabTests.swift */,
+			);
+			path = BasketballLabTests;
+			sourceTree = "<group>";
+		};
+		46913FFC2B82ACD70081BD96 /* BasketballLabUITests */ = {
+			isa = PBXGroup;
+			children = (
+				46913FFD2B82ACD70081BD96 /* BasketballLabUITests.swift */,
+				46913FFF2B82ACD70081BD96 /* BasketballLabUITestsLaunchTests.swift */,
+			);
+			path = BasketballLabUITests;
+			sourceTree = "<group>";
+		};
+		469140122B82B3230081BD96 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				469140152B82B3580081BD96 /* ProfileView.swift */,
+				469140192B82B3AB0081BD96 /* SettingsRowView.swift */,
+				469140172B82B3A30081BD96 /* ProfileSettingsView.swift */,
+				469140132B82B3350081BD96 /* StatBar.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		4691401B2B82B3C10081BD96 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				46B87E652B8E2A25005F34C5 /* VisionDataModels */,
+				4691401C2B82B3D20081BD96 /* User.swift */,
+				4691401E2B82B4280081BD96 /* BasketballStats.swift */,
+				4691403D2B8317FA0081BD96 /* LocalData.swift */,
+				465DAF402B8A4F7800677CA8 /* Drills.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
+		469140202B82B4EF0081BD96 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				469140222B82B5030081BD96 /* ViewModels */,
+				469140212B82B4FC0081BD96 /* Views */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		469140212B82B4FC0081BD96 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				469140362B82BEE50081BD96 /* LoginView.swift */,
+				469140322B82BD300081BD96 /* RegistrationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		469140222B82B5030081BD96 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				469140302B82BCFB0081BD96 /* AuthViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4691403A2B82CE150081BD96 /* MainApp */ = {
+			isa = PBXGroup;
+			children = (
+				469140382B82CCB60081BD96 /* MainView.swift */,
+			);
+			path = MainApp;
+			sourceTree = "<group>";
+		};
+		46B87E4C2B8D6365005F34C5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		46B87E652B8E2A25005F34C5 /* VisionDataModels */ = {
+			isa = PBXGroup;
+			children = (
+				46B87E602B8D8DE9005F34C5 /* Ball.swift */,
+				46B87E662B8E2B10005F34C5 /* Frame.swift */,
+				46B87E682B8E348E005F34C5 /* FrameBuffer.swift */,
+				46B87E6B2B8E9743005F34C5 /* VisionCalculations.swift */,
+			);
+			path = VisionDataModels;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		46913FDD2B82ACD50081BD96 /* BasketballLab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 469140032B82ACD70081BD96 /* Build configuration list for PBXNativeTarget "BasketballLab" */;
+			buildPhases = (
+				46913FDA2B82ACD50081BD96 /* Sources */,
+				46913FDB2B82ACD50081BD96 /* Frameworks */,
+				46913FDC2B82ACD50081BD96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BasketballLab;
+			packageProductDependencies = (
+				4691402A2B82B9CF0081BD96 /* FirebaseAuth */,
+				4691402C2B82B9CF0081BD96 /* FirebaseFirestore */,
+				4691402E2B82B9CF0081BD96 /* FirebaseFirestoreSwift */,
+				46B87E632B8D8E4D005F34C5 /* DequeModule */,
+			);
+			productName = BasketballLab;
+			productReference = 46913FDE2B82ACD50081BD96 /* BasketballLab.app */;
+			productType = "com.apple.product-type.application";
+		};
+		46913FEE2B82ACD70081BD96 /* BasketballLabTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 469140062B82ACD70081BD96 /* Build configuration list for PBXNativeTarget "BasketballLabTests" */;
+			buildPhases = (
+				46913FEB2B82ACD70081BD96 /* Sources */,
+				46913FEC2B82ACD70081BD96 /* Frameworks */,
+				46913FED2B82ACD70081BD96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46913FF12B82ACD70081BD96 /* PBXTargetDependency */,
+			);
+			name = BasketballLabTests;
+			productName = BasketballLabTests;
+			productReference = 46913FEF2B82ACD70081BD96 /* BasketballLabTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		46913FF82B82ACD70081BD96 /* BasketballLabUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 469140092B82ACD70081BD96 /* Build configuration list for PBXNativeTarget "BasketballLabUITests" */;
+			buildPhases = (
+				46913FF52B82ACD70081BD96 /* Sources */,
+				46913FF62B82ACD70081BD96 /* Frameworks */,
+				46913FF72B82ACD70081BD96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46913FFB2B82ACD70081BD96 /* PBXTargetDependency */,
+			);
+			name = BasketballLabUITests;
+			productName = BasketballLabUITests;
+			productReference = 46913FF92B82ACD70081BD96 /* BasketballLabUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		46913FD62B82ACD50081BD96 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					46913FDD2B82ACD50081BD96 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					46913FEE2B82ACD70081BD96 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 46913FDD2B82ACD50081BD96;
+					};
+					46913FF82B82ACD70081BD96 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 46913FDD2B82ACD50081BD96;
+					};
+				};
+			};
+			buildConfigurationList = 46913FD92B82ACD50081BD96 /* Build configuration list for PBXProject "BasketballLab" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 46913FD52B82ACD50081BD96;
+			packageReferences = (
+				469140292B82B9CF0081BD96 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				46B87E622B8D8E4D005F34C5 /* XCRemoteSwiftPackageReference "swift-collections" */,
+			);
+			productRefGroup = 46913FDF2B82ACD50081BD96 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				46913FDD2B82ACD50081BD96 /* BasketballLab */,
+				46913FEE2B82ACD70081BD96 /* BasketballLabTests */,
+				46913FF82B82ACD70081BD96 /* BasketballLabUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		46913FDC2B82ACD50081BD96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4691403C2B82D9570081BD96 /* .gitignore in Resources */,
+				46913FEA2B82ACD70081BD96 /* Preview Assets.xcassets in Resources */,
+				46913FE62B82ACD70081BD96 /* Assets.xcassets in Resources */,
+				469140282B82B9040081BD96 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46913FED2B82ACD70081BD96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46913FF72B82ACD70081BD96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		46913FDA2B82ACD50081BD96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4691403E2B8317FA0081BD96 /* LocalData.swift in Sources */,
+				46B87E692B8E348E005F34C5 /* FrameBuffer.swift in Sources */,
+				466D5AFC2B834075009669FB /* BirthDatePickerView.swift in Sources */,
+				46B87E672B8E2B10005F34C5 /* Frame.swift in Sources */,
+				46B87E5F2B8D8B18005F34C5 /* best.mlpackage in Sources */,
+				469140352B82BD670081BD96 /* InputView.swift in Sources */,
+				466D5B082B884807009669FB /* PreviewView.swift in Sources */,
+				464A9E852B900BEF0065478B /* DribbleSession.swift in Sources */,
+				46B87E6E2B8EE047005F34C5 /* DribbleDetectorDelegate.swift in Sources */,
+				469140162B82B3580081BD96 /* ProfileView.swift in Sources */,
+				469140142B82B3350081BD96 /* StatBar.swift in Sources */,
+				4691401A2B82B3AB0081BD96 /* SettingsRowView.swift in Sources */,
+				46B87E612B8D8DE9005F34C5 /* Ball.swift in Sources */,
+				469140332B82BD300081BD96 /* RegistrationView.swift in Sources */,
+				46913FE42B82ACD50081BD96 /* ContentView.swift in Sources */,
+				4691401F2B82B4280081BD96 /* BasketballStats.swift in Sources */,
+				469140262B82B5670081BD96 /* Extensions.swift in Sources */,
+				469140372B82BEE50081BD96 /* LoginView.swift in Sources */,
+				469140182B82B3A30081BD96 /* ProfileSettingsView.swift in Sources */,
+				466D5AFE2B83D0C2009669FB /* CustomAlertView.swift in Sources */,
+				466D5B012B8696B9009669FB /* WorkoutsView.swift in Sources */,
+				46B87E6C2B8E9743005F34C5 /* VisionCalculations.swift in Sources */,
+				469140312B82BCFB0081BD96 /* AuthViewModel.swift in Sources */,
+				465DAF412B8A4F7800677CA8 /* Drills.swift in Sources */,
+				466D5B052B86E73D009669FB /* CameraPreviewView.swift in Sources */,
+				4691401D2B82B3D20081BD96 /* User.swift in Sources */,
+				465DAF3F2B8984E800677CA8 /* DribbleDetectorView.swift in Sources */,
+				46B87E592B8D7C4E005F34C5 /* BasketballLabApp.swift in Sources */,
+				466306F32B8AD4F300201529 /* ModelManager.swift in Sources */,
+				469140392B82CCB60081BD96 /* MainView.swift in Sources */,
+				465DAF3D2B89361100677CA8 /* CameraViewModel.swift in Sources */,
+				469140242B82B5380081BD96 /* ButtonView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46913FEB2B82ACD70081BD96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46913FF42B82ACD70081BD96 /* BasketballLabTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46913FF52B82ACD70081BD96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46913FFE2B82ACD70081BD96 /* BasketballLabUITests.swift in Sources */,
+				469140002B82ACD70081BD96 /* BasketballLabUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		46913FF12B82ACD70081BD96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46913FDD2B82ACD50081BD96 /* BasketballLab */;
+			targetProxy = 46913FF02B82ACD70081BD96 /* PBXContainerItemProxy */;
+		};
+		46913FFB2B82ACD70081BD96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46913FDD2B82ACD50081BD96 /* BasketballLab */;
+			targetProxy = 46913FFA2B82ACD70081BD96 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		469140012B82ACD70081BD96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		469140022B82ACD70081BD96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		469140042B82ACD70081BD96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BasketballLab/BasketballLab.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BasketballLab/Preview Content\"";
+				DEVELOPMENT_TEAM = B8JVR8638A;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is needed for footage analysis";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.onikh.BasketballLab;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = com.onikhoque.BasketballLab;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = com.onikhoque.BasketballLab;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		469140052B82ACD70081BD96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BasketballLab/BasketballLab.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BasketballLab/Preview Content\"";
+				DEVELOPMENT_TEAM = B8JVR8638A;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is needed for footage analysis";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.onikh.BasketballLab;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = com.onikhoque.BasketballLab;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = com.onikhoque.BasketballLab;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		469140072B82ACD70081BD96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B8JVR8638A;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.onikh.BasketballLabTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BasketballLab.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BasketballLab";
+			};
+			name = Debug;
+		};
+		469140082B82ACD70081BD96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B8JVR8638A;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.onikh.BasketballLabTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BasketballLab.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BasketballLab";
+			};
+			name = Release;
+		};
+		4691400A2B82ACD70081BD96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B8JVR8638A;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.onikh.BasketballLabUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BasketballLab;
+			};
+			name = Debug;
+		};
+		4691400B2B82ACD70081BD96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B8JVR8638A;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.onikh.BasketballLabUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BasketballLab;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		46913FD92B82ACD50081BD96 /* Build configuration list for PBXProject "BasketballLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				469140012B82ACD70081BD96 /* Debug */,
+				469140022B82ACD70081BD96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		469140032B82ACD70081BD96 /* Build configuration list for PBXNativeTarget "BasketballLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				469140042B82ACD70081BD96 /* Debug */,
+				469140052B82ACD70081BD96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		469140062B82ACD70081BD96 /* Build configuration list for PBXNativeTarget "BasketballLabTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				469140072B82ACD70081BD96 /* Debug */,
+				469140082B82ACD70081BD96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		469140092B82ACD70081BD96 /* Build configuration list for PBXNativeTarget "BasketballLabUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4691400A2B82ACD70081BD96 /* Debug */,
+				4691400B2B82ACD70081BD96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		469140292B82B9CF0081BD96 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.21.0;
+			};
+		};
+		46B87E622B8D8E4D005F34C5 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4691402A2B82B9CF0081BD96 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 469140292B82B9CF0081BD96 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		4691402C2B82B9CF0081BD96 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 469140292B82B9CF0081BD96 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		4691402E2B82B9CF0081BD96 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 469140292B82B9CF0081BD96 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		46B87E632B8D8E4D005F34C5 /* DequeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46B87E622B8D8E4D005F34C5 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = DequeModule;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 46913FD62B82ACD50081BD96 /* Project object */;
+}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		464A9E852B900BEF0065478B /* DribbleSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A9E842B900BEF0065478B /* DribbleSession.swift */; };
 		465DAF3D2B89361100677CA8 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DAF3C2B89361100677CA8 /* CameraViewModel.swift */; };
 		465DAF3F2B8984E800677CA8 /* DribbleDetectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DAF3E2B8984E800677CA8 /* DribbleDetectorView.swift */; };
 		465DAF412B8A4F7800677CA8 /* Drills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DAF402B8A4F7800677CA8 /* Drills.swift */; };
@@ -69,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		464A9E842B900BEF0065478B /* DribbleSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbleSession.swift; sourceTree = "<group>"; };
 		465DAF3C2B89361100677CA8 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		465DAF3E2B8984E800677CA8 /* DribbleDetectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbleDetectorView.swift; sourceTree = "<group>"; };
 		465DAF402B8A4F7800677CA8 /* Drills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drills.swift; sourceTree = "<group>"; };
@@ -142,13 +144,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		464A9E832B900BCC0065478B /* DribbleDetector */ = {
+			isa = PBXGroup;
+			children = (
+				46B87E6D2B8EE047005F34C5 /* DribbleDetectorDelegate.swift */,
+				465DAF3E2B8984E800677CA8 /* DribbleDetectorView.swift */,
+				464A9E842B900BEF0065478B /* DribbleSession.swift */,
+			);
+			path = DribbleDetector;
+			sourceTree = "<group>";
+		};
 		466D5AFF2B8695AC009669FB /* Camera */ = {
 			isa = PBXGroup;
 			children = (
 				466D5B062B883CF0009669FB /* Experiment */,
 				466D5B002B8696B9009669FB /* WorkoutsView.swift */,
-				465DAF3E2B8984E800677CA8 /* DribbleDetectorView.swift */,
-				46B87E6D2B8EE047005F34C5 /* DribbleDetectorDelegate.swift */,
+				464A9E832B900BCC0065478B /* DribbleDetector */,
 				466D5B042B86E73D009669FB /* CameraPreviewView.swift */,
 				465DAF3C2B89361100677CA8 /* CameraViewModel.swift */,
 				466306F22B8AD4F300201529 /* ModelManager.swift */,
@@ -459,6 +470,7 @@
 				46B87E5F2B8D8B18005F34C5 /* best.mlpackage in Sources */,
 				469140352B82BD670081BD96 /* InputView.swift in Sources */,
 				466D5B082B884807009669FB /* PreviewView.swift in Sources */,
+				464A9E852B900BEF0065478B /* DribbleSession.swift in Sources */,
 				46B87E6E2B8EE047005F34C5 /* DribbleDetectorDelegate.swift in Sources */,
 				469140162B82B3580081BD96 /* ProfileView.swift in Sources */,
 				469140142B82B3350081BD96 /* StatBar.swift in Sources */,
@@ -663,6 +675,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.onikh.BasketballLab;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = com.onikhoque.BasketballLab;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = com.onikhoque.BasketballLab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -702,6 +716,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.onikh.BasketballLab;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = com.onikhoque.BasketballLab;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = com.onikhoque.BasketballLab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";

@@ -13,7 +13,6 @@ import Vision
 import CoreML
 
 class ViewData {
-    var captureDevice : AVCaptureDevice?
     var rotationCoordinator : AVCaptureDevice.RotationCoordinator?
     var previewObservation : NSKeyValueObservation?
 }
@@ -36,7 +35,7 @@ class ViewData {
     override init() {
         cameraView = CameraPreviewView()
         viewData = ViewData()
-        print("initialized")
+        print("initialized camera view model")
         
     }
     
@@ -61,18 +60,17 @@ class ViewData {
         
         self.captureSession.beginConfiguration()
         self.captureSession.sessionPreset = .iFrame960x540
-        viewData.captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
         
-        if let _ = try? viewData.captureDevice?.lockForConfiguration() {
-            viewData.captureDevice?.isSubjectAreaChangeMonitoringEnabled = true
-            viewData.captureDevice?.unlockForConfiguration()
+        if let _ = try? self.captureDevice?.lockForConfiguration() {
+            self.captureDevice?.isSubjectAreaChangeMonitoringEnabled = true
+            self.captureDevice?.unlockForConfiguration()
         }
         
-        if let device = viewData.captureDevice {
+        if let device = self.captureDevice {
             if let input = try? AVCaptureDeviceInput(device: device) {
                 self.captureSession.addInput(input)
                 self.captureSession.addOutput(self.output)
-                                self.output.alwaysDiscardsLateVideoFrames = true
+                self.output.alwaysDiscardsLateVideoFrames = true
                 self.output.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_420YpCbCr8BiPlanarFullRange)]
                 self.output.setSampleBufferDelegate(self, queue: DispatchQueue(label: "camera_frame_processing_queue"))
                 self.captureSession.commitConfiguration()
@@ -83,50 +81,52 @@ class ViewData {
         } else {
             print("Not authorized2")
         }
-    }
-    
-    
-    
-    func showCamera() {
+        
         let previewLayer = cameraView.view.layer as? AVCaptureVideoPreviewLayer
+        previewLayer?.zPosition = 0
         previewLayer?.session = self.captureSession
         
-        if let device = viewData.captureDevice, let preview = previewLayer {
+        if let device = self.captureDevice, let preview = previewLayer {
             viewData.rotationCoordinator = AVCaptureDevice.RotationCoordinator(device: device, previewLayer: preview)
             preview.connection?.videoRotationAngle = viewData.rotationCoordinator!.videoRotationAngleForHorizonLevelPreview
             viewData.previewObservation = viewData.rotationCoordinator!.observe(\.videoRotationAngleForHorizonLevelPreview, changeHandler: { old, value in
                 preview.connection?.videoRotationAngle = self.viewData.rotationCoordinator!.videoRotationAngleForHorizonLevelPreview
             })
         }
+    }
+    
+    
+    
+    func startCamera() {
         Task(priority: .background) {
+            
             self.captureSession.startRunning()
             print("began running capture session")
         }
     }
     
+    func setDelegate(delegate: some AVCaptureVideoDataOutputSampleBufferDelegate) {
+        if self.captureSession.isRunning {
+            captureSession.stopRunning()
+        }
+        self.captureSession.beginConfiguration()
+        self.output.setSampleBufferDelegate(delegate, queue: DispatchQueue(label: "com.yourApp.sampleBufferDelegate"))
+        self.captureSession.commitConfiguration()
+        print("delegate set")
+    }
 }
+
 
 extension CameraViewModel : AVCaptureVideoDataOutputSampleBufferDelegate {
     
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        
-        guard let pixelBuffer : CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {print("unable to make buffer");return}
-        
-        let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .down, options: [:])
-        
-        do {
-            try imageRequestHandler.perform(self.requests)
-        } catch let error {
-            print(error)
-        }
-        
+        print("error")
     }
     
     
     func setupDetector() { //sets up the model
         let modelURL = Bundle.main.url(forResource: "best", withExtension: "mlmodelc")
-        
         do {
             let visionModel = try VNCoreMLModel(for: MLModel(contentsOf: modelURL!))
             let recognitions = VNCoreMLRequest(model: visionModel, completionHandler: detectionDidComplete)
@@ -141,6 +141,7 @@ extension CameraViewModel : AVCaptureVideoDataOutputSampleBufferDelegate {
     func detectionDidComplete(request: VNRequest, error: Error?) {
         DispatchQueue.main.async(execute: {
             if let results = request.results {
+                
                 let ball = results.first as? VNRecognizedObjectObservation
                 
                 if ball != nil {
@@ -158,6 +159,5 @@ extension CameraViewModel : AVCaptureVideoDataOutputSampleBufferDelegate {
             }
         })
     }
-    
     
 }

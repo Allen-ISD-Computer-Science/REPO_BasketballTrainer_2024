@@ -10,13 +10,22 @@ import SwiftUI
 struct WorkoutsView: View {
     
     private var cameraViewModel = CameraViewModel()
+    @State var navigationPath = NavigationPath()
     
     var body: some View {
         
-        NavigationStack() {
-            NavigationLink("String") {
+        NavigationStack(path: $navigationPath) {
+            
+            NavigationLink("Dribble Detection Drill") {
                 DribbleDetectorView(cameraViewModel: cameraViewModel).toolbar(.hidden, for: .tabBar)
             }
+            
+            NavigationLink("Test") {
+                Text("g").onAppear {
+                    print(navigationPath.count)
+                }
+            }
+            
         }
         
     }

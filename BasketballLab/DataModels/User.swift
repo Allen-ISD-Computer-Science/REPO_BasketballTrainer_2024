@@ -11,12 +11,18 @@ import Foundation
 struct User : Identifiable, Codable {
     
     let id : String
-    let fullName : String
+    let username : String
     let email : String
+    
+    var receivedRequests = [String]() //ids of accounts that request me
+    var outgoingRequests = [String]() //ids of accounts that I requested
+    var friends = [String]()
+    
+    
     
     var initials : String {
         let formatter = PersonNameComponentsFormatter()
-        if let components = formatter.personNameComponents(from: fullName) {
+        if let components = formatter.personNameComponents(from: username) {
             formatter.style = .abbreviated
             return formatter.string(from: components)
         } else {
@@ -26,6 +32,12 @@ struct User : Identifiable, Codable {
     
 }
 
+struct FriendRequest : Codable {
+    let senderID : String
+    let recipientID : String
+}
+
+
 extension User {
-    static var mockUser = User(id: NSUUID().uuidString, fullName: "Onik Hoque", email: "test@gmail.com")
+    static var mockUser = User(id: NSUUID().uuidString, username: "Onik Hoque", email: "test@gmail.com")
 }

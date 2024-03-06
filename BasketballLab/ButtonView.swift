@@ -11,14 +11,13 @@ struct ButtonView: View {
     
     var text : String
     var imageName : String
-    var widthProportion : Double
   
     
     var body: some View {
         HStack {
             Text(text)
             Image(systemName: imageName)
-        }.frame(width: widthProportion*UIScreen.main.bounds.width,
+        }.frame(width: 300,
                 height: 40)
       
 
@@ -26,5 +25,5 @@ struct ButtonView: View {
 }
 
 #Preview {
-    ButtonView(text: "Play", imageName: "basketball", widthProportion: 3/4)
+    ButtonView(text: "Play", imageName: "basketball")
 }

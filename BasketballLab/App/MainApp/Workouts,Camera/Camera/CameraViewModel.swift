@@ -44,7 +44,7 @@ class ViewData {
     }
     
     func getAuthorization() async {
-        self.setupDetector()
+        //self.setupDetector()
         let granted = await AVCaptureDevice.requestAccess(for: .video)
         await MainActor.run {
             if granted && configured == false {
@@ -84,11 +84,13 @@ class ViewData {
         
         let previewLayer = cameraView.view.layer as? AVCaptureVideoPreviewLayer
         previewLayer?.zPosition = 0
+        cameraView.view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         previewLayer?.session = self.captureSession
         
         if let device = self.captureDevice, let preview = previewLayer {
             viewData.rotationCoordinator = AVCaptureDevice.RotationCoordinator(device: device, previewLayer: preview)
             preview.connection?.videoRotationAngle = viewData.rotationCoordinator!.videoRotationAngleForHorizonLevelPreview
+            print(viewData.rotationCoordinator!.videoRotationAngleForHorizonLevelPreview)
             viewData.previewObservation = viewData.rotationCoordinator!.observe(\.videoRotationAngleForHorizonLevelPreview, changeHandler: { old, value in
                 preview.connection?.videoRotationAngle = self.viewData.rotationCoordinator!.videoRotationAngleForHorizonLevelPreview
             })
@@ -124,40 +126,5 @@ extension CameraViewModel : AVCaptureVideoDataOutputSampleBufferDelegate {
         print("error")
     }
     
-    
-    func setupDetector() { //sets up the model
-        let modelURL = Bundle.main.url(forResource: "best", withExtension: "mlmodelc")
-        do {
-            let visionModel = try VNCoreMLModel(for: MLModel(contentsOf: modelURL!))
-            let recognitions = VNCoreMLRequest(model: visionModel, completionHandler: detectionDidComplete)
-            self.requests = [recognitions]
-        } catch let error {
-            print(error)
-        }
-    }
-    
-    
-    
-    func detectionDidComplete(request: VNRequest, error: Error?) {
-        DispatchQueue.main.async(execute: {
-            if let results = request.results {
-                
-                let ball = results.first as? VNRecognizedObjectObservation
-                
-                if ball != nil {
-                    self.frameBuffer.addLocationFrame(frame: Frame(ball: Ball(
-                        x1: 1,
-                        y1: Int(UIScreen.main.bounds.width*(ball?.boundingBox.minY)!),
-                        x2: 1,
-                        y2: 1)))
-                    print(Int(UIScreen.main.bounds.width*(ball?.boundingBox.minY)!))
-                } else {
-                    self.frameBuffer.addLocationFrame(frame: Frame(ball: nil))
-                }
-                
-                VisionCalculations.dribbleDetection(frameBuffer: self.frameBuffer)
-            }
-        })
-    }
     
 }

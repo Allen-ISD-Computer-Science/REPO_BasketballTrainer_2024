@@ -17,12 +17,12 @@ struct MainView: View {
                     Label("My Profile", systemImage: "person.crop.square.filled.and.at.rectangle")
                 }
             
-            ProfileSettingsView()
+            WorkoutsView()
                 .tabItem {
                     Label("Workouts", systemImage: "basketball")
                 }
             
-            WorkoutsView()
+            FriendsView()  
                 .tabItem {
                     Label("Friends", systemImage: "figure.2")
                         .font(.caption2)

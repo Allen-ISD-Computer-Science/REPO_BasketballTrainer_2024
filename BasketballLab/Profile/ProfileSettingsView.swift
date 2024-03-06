@@ -27,7 +27,7 @@ struct ProfileSettingsView: View {
                             .clipShape(Circle())
                         
                         VStack(alignment: .leading) {
-                            Text(user.fullName)
+                            Text(user.username)
                             Text(user.email).accentColor(.gray)
                         }.padding([.leading], 10)
                     }
@@ -58,12 +58,19 @@ struct ProfileSettingsView: View {
                         SettingsRowView(imageName: "trash", title: "Delete Account", tintColor: Color.red)
                     }
                     
-                }
+                }.alert(authViewModel.errorMessage ?? "", isPresented: $authViewModel.alertShowing) { Button("OK", role: .cancel) { } }
             
         }
             
         } else {
-            Text("Unable to display user details. Relaunch and sign in.")
+            VStack {
+                Text("Unable to display user details. Relaunch and sign in again.")
+                Button {
+                    authViewModel.signOut()
+                } label : {
+                    Text("Tap here to return to login")
+                }
+            }
         }
         
         

@@ -24,6 +24,32 @@ extension View {
     }
 }
 
+import SwiftUI
+
+extension View {
+    func hideKeyboard() {
+        let resign = #selector(UIResponder.resignFirstResponder)
+        UIApplication.shared.sendAction(resign, to: nil, from: nil, for: nil)
+    }
+    
+    func enablePortraitMode() {
+        AppDelegate.orientationLock = .allButUpsideDown
+        
+        if UIDevice.current.orientation.isPortrait {
+            print("view is portrait, code ran")
+            let windowScene = UIApplication.shared.connectedScenes.first(where: { $0 is UIWindowScene }) as? UIWindowScene
+            windowScene?.requestGeometryUpdate(.iOS(
+                interfaceOrientations: .portrait
+            ))
+        }
+
+    }
+}
+
+
+
+
+
 
 //allows for locking of a view in portrait mode. in my case, the camera. 
 /*

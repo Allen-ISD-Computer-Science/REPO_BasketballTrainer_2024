@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		464A9E852B900BEF0065478B /* DribbleSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A9E842B900BEF0065478B /* DribbleSession.swift */; };
+		4647517B2B91751000DC9284 /* FrequencyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4647517A2B91751000DC9284 /* FrequencyChartView.swift */; };
+		464A9E852B900BEF0065478B /* DribbleSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A9E842B900BEF0065478B /* DribbleSessionView.swift */; };
+		465C1D802B957CE900AB62B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 465C1D7F2B957CE900AB62B8 /* GoogleService-Info.plist */; };
+		465C1D822B95975000AB62B8 /* iOSCheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465C1D812B95975000AB62B8 /* iOSCheckboxToggleStyle.swift */; };
 		465DAF3D2B89361100677CA8 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DAF3C2B89361100677CA8 /* CameraViewModel.swift */; };
 		465DAF3F2B8984E800677CA8 /* DribbleDetectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DAF3E2B8984E800677CA8 /* DribbleDetectorView.swift */; };
 		465DAF412B8A4F7800677CA8 /* Drills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DAF402B8A4F7800677CA8 /* Drills.swift */; };
-		466306F32B8AD4F300201529 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466306F22B8AD4F300201529 /* ModelManager.swift */; };
 		466D5AFC2B834075009669FB /* BirthDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D5AFB2B834075009669FB /* BirthDatePickerView.swift */; };
 		466D5AFE2B83D0C2009669FB /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D5AFD2B83D0C2009669FB /* CustomAlertView.swift */; };
 		466D5B012B8696B9009669FB /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D5B002B8696B9009669FB /* WorkoutsView.swift */; };
 		466D5B052B86E73D009669FB /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D5B042B86E73D009669FB /* CameraPreviewView.swift */; };
-		466D5B082B884807009669FB /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D5B072B884807009669FB /* PreviewView.swift */; };
 		46913FE42B82ACD50081BD96 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46913FE32B82ACD50081BD96 /* ContentView.swift */; };
 		46913FE62B82ACD70081BD96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46913FE52B82ACD70081BD96 /* Assets.xcassets */; };
 		46913FEA2B82ACD70081BD96 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46913FE92B82ACD70081BD96 /* Preview Assets.xcassets */; };
@@ -31,13 +32,12 @@
 		4691401F2B82B4280081BD96 /* BasketballStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4691401E2B82B4280081BD96 /* BasketballStats.swift */; };
 		469140242B82B5380081BD96 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140232B82B5380081BD96 /* ButtonView.swift */; };
 		469140262B82B5670081BD96 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140252B82B5670081BD96 /* Extensions.swift */; };
-		469140282B82B9040081BD96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 469140272B82B9030081BD96 /* GoogleService-Info.plist */; };
 		4691402B2B82B9CF0081BD96 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4691402A2B82B9CF0081BD96 /* FirebaseAuth */; };
 		4691402D2B82B9CF0081BD96 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4691402C2B82B9CF0081BD96 /* FirebaseFirestore */; };
 		4691402F2B82B9CF0081BD96 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4691402E2B82B9CF0081BD96 /* FirebaseFirestoreSwift */; };
 		469140312B82BCFB0081BD96 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140302B82BCFB0081BD96 /* AuthViewModel.swift */; };
 		469140332B82BD300081BD96 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140322B82BD300081BD96 /* RegistrationView.swift */; };
-		469140352B82BD670081BD96 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140342B82BD670081BD96 /* InputView.swift */; };
+		469140352B82BD670081BD96 /* InputView&SecureInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140342B82BD670081BD96 /* InputView&SecureInputView.swift */; };
 		469140372B82BEE50081BD96 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140362B82BEE50081BD96 /* LoginView.swift */; };
 		469140392B82CCB60081BD96 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469140382B82CCB60081BD96 /* MainView.swift */; };
 		4691403C2B82D9570081BD96 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4691403B2B82D9570081BD96 /* .gitignore */; };
@@ -48,8 +48,13 @@
 		46B87E642B8D8E4D005F34C5 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 46B87E632B8D8E4D005F34C5 /* DequeModule */; };
 		46B87E672B8E2B10005F34C5 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B87E662B8E2B10005F34C5 /* Frame.swift */; };
 		46B87E692B8E348E005F34C5 /* FrameBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B87E682B8E348E005F34C5 /* FrameBuffer.swift */; };
-		46B87E6C2B8E9743005F34C5 /* VisionCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B87E6B2B8E9743005F34C5 /* VisionCalculations.swift */; };
+		46B87E6C2B8E9743005F34C5 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B87E6B2B8E9743005F34C5 /* Calculator.swift */; };
 		46B87E6E2B8EE047005F34C5 /* DribbleDetectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B87E6D2B8EE047005F34C5 /* DribbleDetectorDelegate.swift */; };
+		46BA82752B95B0CB00DA6AEA /* FriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BA82742B95B0CB00DA6AEA /* FriendRequest.swift */; };
+		46BA82782B9633BC00DA6AEA /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BA82772B9633BC00DA6AEA /* FriendsView.swift */; };
+		46BA827B2B96353300DA6AEA /* SlidingTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 46BA827A2B96353300DA6AEA /* SlidingTabView */; };
+		46BA827E2B96393C00DA6AEA /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BA827D2B96393C00DA6AEA /* AddFriendView.swift */; };
+		46BA82802B964AA800DA6AEA /* AuthViewModelFriendExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BA827F2B964AA800DA6AEA /* AuthViewModelFriendExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,16 +75,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		464A9E842B900BEF0065478B /* DribbleSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbleSession.swift; sourceTree = "<group>"; };
+		4647517A2B91751000DC9284 /* FrequencyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyChartView.swift; sourceTree = "<group>"; };
+		464A9E842B900BEF0065478B /* DribbleSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbleSessionView.swift; sourceTree = "<group>"; };
+		465C1D7F2B957CE900AB62B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		465C1D812B95975000AB62B8 /* iOSCheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSCheckboxToggleStyle.swift; sourceTree = "<group>"; };
 		465DAF3C2B89361100677CA8 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		465DAF3E2B8984E800677CA8 /* DribbleDetectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbleDetectorView.swift; sourceTree = "<group>"; };
 		465DAF402B8A4F7800677CA8 /* Drills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drills.swift; sourceTree = "<group>"; };
-		466306F22B8AD4F300201529 /* ModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
 		466D5AFB2B834075009669FB /* BirthDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDatePickerView.swift; sourceTree = "<group>"; };
 		466D5AFD2B83D0C2009669FB /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		466D5B002B8696B9009669FB /* WorkoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsView.swift; sourceTree = "<group>"; };
 		466D5B042B86E73D009669FB /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
-		466D5B072B884807009669FB /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		46913FDE2B82ACD50081BD96 /* BasketballLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasketballLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46913FE32B82ACD50081BD96 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		46913FE52B82ACD70081BD96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,10 +104,9 @@
 		4691401E2B82B4280081BD96 /* BasketballStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketballStats.swift; sourceTree = "<group>"; };
 		469140232B82B5380081BD96 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		469140252B82B5670081BD96 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		469140272B82B9030081BD96 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		469140302B82BCFB0081BD96 /* AuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		469140322B82BD300081BD96 /* RegistrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
-		469140342B82BD670081BD96 /* InputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		469140342B82BD670081BD96 /* InputView&SecureInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InputView&SecureInputView.swift"; sourceTree = "<group>"; };
 		469140362B82BEE50081BD96 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		469140382B82CCB60081BD96 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4691403B2B82D9570081BD96 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -111,8 +116,12 @@
 		46B87E602B8D8DE9005F34C5 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		46B87E662B8E2B10005F34C5 /* Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
 		46B87E682B8E348E005F34C5 /* FrameBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameBuffer.swift; sourceTree = "<group>"; };
-		46B87E6B2B8E9743005F34C5 /* VisionCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionCalculations.swift; sourceTree = "<group>"; };
+		46B87E6B2B8E9743005F34C5 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		46B87E6D2B8EE047005F34C5 /* DribbleDetectorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbleDetectorDelegate.swift; sourceTree = "<group>"; };
+		46BA82742B95B0CB00DA6AEA /* FriendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequest.swift; sourceTree = "<group>"; };
+		46BA82772B9633BC00DA6AEA /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
+		46BA827D2B96393C00DA6AEA /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendView.swift; sourceTree = "<group>"; };
+		46BA827F2B964AA800DA6AEA /* AuthViewModelFriendExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModelFriendExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4691402B2B82B9CF0081BD96 /* FirebaseAuth in Frameworks */,
+				46BA827B2B96353300DA6AEA /* SlidingTabView in Frameworks */,
 				46B87E642B8D8E4D005F34C5 /* DequeModule in Frameworks */,
 				4691402D2B82B9CF0081BD96 /* FirebaseFirestore in Frameworks */,
 				4691402F2B82B9CF0081BD96 /* FirebaseFirestoreSwift in Frameworks */,
@@ -149,30 +159,49 @@
 			children = (
 				46B87E6D2B8EE047005F34C5 /* DribbleDetectorDelegate.swift */,
 				465DAF3E2B8984E800677CA8 /* DribbleDetectorView.swift */,
-				464A9E842B900BEF0065478B /* DribbleSession.swift */,
+				464A9E842B900BEF0065478B /* DribbleSessionView.swift */,
+				4647517A2B91751000DC9284 /* FrequencyChartView.swift */,
 			);
 			path = DribbleDetector;
 			sourceTree = "<group>";
 		};
-		466D5AFF2B8695AC009669FB /* Camera */ = {
+		465C1D7C2B95654E00AB62B8 /* Login,Register,Auth */ = {
 			isa = PBXGroup;
 			children = (
-				466D5B062B883CF0009669FB /* Experiment */,
-				466D5B002B8696B9009669FB /* WorkoutsView.swift */,
-				464A9E832B900BCC0065478B /* DribbleDetector */,
+				469140212B82B4FC0081BD96 /* Views */,
+				469140222B82B5030081BD96 /* ViewModels */,
+			);
+			path = "Login,Register,Auth";
+			sourceTree = "<group>";
+		};
+		465C1D7D2B9565AE00AB62B8 /* MainApp */ = {
+			isa = PBXGroup;
+			children = (
+				469140382B82CCB60081BD96 /* MainView.swift */,
+				46BA82762B96294900DA6AEA /* Friends */,
+				466D5AFF2B8695AC009669FB /* Workouts,Camera */,
+			);
+			path = MainApp;
+			sourceTree = "<group>";
+		};
+		465C1D7E2B95663100AB62B8 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
 				466D5B042B86E73D009669FB /* CameraPreviewView.swift */,
 				465DAF3C2B89361100677CA8 /* CameraViewModel.swift */,
-				466306F22B8AD4F300201529 /* ModelManager.swift */,
+				46B87E652B8E2A25005F34C5 /* VisionDataModels */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
 		};
-		466D5B062B883CF0009669FB /* Experiment */ = {
+		466D5AFF2B8695AC009669FB /* Workouts,Camera */ = {
 			isa = PBXGroup;
 			children = (
-				466D5B072B884807009669FB /* PreviewView.swift */,
+				466D5B002B8696B9009669FB /* WorkoutsView.swift */,
+				465C1D7E2B95663100AB62B8 /* Camera */,
+				464A9E832B900BCC0065478B /* DribbleDetector */,
 			);
-			path = Experiment;
+			path = "Workouts,Camera";
 			sourceTree = "<group>";
 		};
 		46913FD52B82ACD50081BD96 = {
@@ -201,19 +230,17 @@
 			children = (
 				46B87E582B8D7C4E005F34C5 /* BasketballLabApp.swift */,
 				46913FE32B82ACD50081BD96 /* ContentView.swift */,
-				466D5AFF2B8695AC009669FB /* Camera */,
-				4691403A2B82CE150081BD96 /* MainApp */,
-				469140202B82B4EF0081BD96 /* Authentication */,
+				4691403A2B82CE150081BD96 /* App */,
 				4691401B2B82B3C10081BD96 /* DataModels */,
 				46B87E4C2B8D6365005F34C5 /* Resources */,
 				469140122B82B3230081BD96 /* Profile */,
 				469140232B82B5380081BD96 /* ButtonView.swift */,
 				466D5AFD2B83D0C2009669FB /* CustomAlertView.swift */,
-				469140342B82BD670081BD96 /* InputView.swift */,
+				469140342B82BD670081BD96 /* InputView&SecureInputView.swift */,
 				466D5AFB2B834075009669FB /* BirthDatePickerView.swift */,
 				469140252B82B5670081BD96 /* Extensions.swift */,
+				465C1D7F2B957CE900AB62B8 /* GoogleService-Info.plist */,
 				46B87E5E2B8D8B18005F34C5 /* best.mlpackage */,
-				469140272B82B9030081BD96 /* GoogleService-Info.plist */,
 				46913FE52B82ACD70081BD96 /* Assets.xcassets */,
 				46913FE72B82ACD70081BD96 /* BasketballLab.entitlements */,
 				46913FE82B82ACD70081BD96 /* Preview Content */,
@@ -260,8 +287,8 @@
 		4691401B2B82B3C10081BD96 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
-				46B87E652B8E2A25005F34C5 /* VisionDataModels */,
 				4691401C2B82B3D20081BD96 /* User.swift */,
+				46BA82742B95B0CB00DA6AEA /* FriendRequest.swift */,
 				4691401E2B82B4280081BD96 /* BasketballStats.swift */,
 				4691403D2B8317FA0081BD96 /* LocalData.swift */,
 				465DAF402B8A4F7800677CA8 /* Drills.swift */,
@@ -269,20 +296,12 @@
 			path = DataModels;
 			sourceTree = "<group>";
 		};
-		469140202B82B4EF0081BD96 /* Authentication */ = {
-			isa = PBXGroup;
-			children = (
-				469140222B82B5030081BD96 /* ViewModels */,
-				469140212B82B4FC0081BD96 /* Views */,
-			);
-			path = Authentication;
-			sourceTree = "<group>";
-		};
 		469140212B82B4FC0081BD96 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				469140362B82BEE50081BD96 /* LoginView.swift */,
 				469140322B82BD300081BD96 /* RegistrationView.swift */,
+				465C1D812B95975000AB62B8 /* iOSCheckboxToggleStyle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -295,12 +314,13 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		4691403A2B82CE150081BD96 /* MainApp */ = {
+		4691403A2B82CE150081BD96 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				469140382B82CCB60081BD96 /* MainView.swift */,
+				465C1D7D2B9565AE00AB62B8 /* MainApp */,
+				465C1D7C2B95654E00AB62B8 /* Login,Register,Auth */,
 			);
-			path = MainApp;
+			path = App;
 			sourceTree = "<group>";
 		};
 		46B87E4C2B8D6365005F34C5 /* Resources */ = {
@@ -316,9 +336,27 @@
 				46B87E602B8D8DE9005F34C5 /* Ball.swift */,
 				46B87E662B8E2B10005F34C5 /* Frame.swift */,
 				46B87E682B8E348E005F34C5 /* FrameBuffer.swift */,
-				46B87E6B2B8E9743005F34C5 /* VisionCalculations.swift */,
+				46B87E6B2B8E9743005F34C5 /* Calculator.swift */,
 			);
 			path = VisionDataModels;
+			sourceTree = "<group>";
+		};
+		46BA82762B96294900DA6AEA /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				46BA82772B9633BC00DA6AEA /* FriendsView.swift */,
+				46BA827F2B964AA800DA6AEA /* AuthViewModelFriendExtension.swift */,
+				46BA827C2B96392A00DA6AEA /* FriendSubViews */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		46BA827C2B96392A00DA6AEA /* FriendSubViews */ = {
+			isa = PBXGroup;
+			children = (
+				46BA827D2B96393C00DA6AEA /* AddFriendView.swift */,
+			);
+			path = FriendSubViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +380,7 @@
 				4691402C2B82B9CF0081BD96 /* FirebaseFirestore */,
 				4691402E2B82B9CF0081BD96 /* FirebaseFirestoreSwift */,
 				46B87E632B8D8E4D005F34C5 /* DequeModule */,
+				46BA827A2B96353300DA6AEA /* SlidingTabView */,
 			);
 			productName = BasketballLab;
 			productReference = 46913FDE2B82ACD50081BD96 /* BasketballLab.app */;
@@ -418,6 +457,7 @@
 			packageReferences = (
 				469140292B82B9CF0081BD96 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				46B87E622B8D8E4D005F34C5 /* XCRemoteSwiftPackageReference "swift-collections" */,
+				46BA82792B96353300DA6AEA /* XCRemoteSwiftPackageReference "SlidingTabView" */,
 			);
 			productRefGroup = 46913FDF2B82ACD50081BD96 /* Products */;
 			projectDirPath = "";
@@ -437,8 +477,8 @@
 			files = (
 				4691403C2B82D9570081BD96 /* .gitignore in Resources */,
 				46913FEA2B82ACD70081BD96 /* Preview Assets.xcassets in Resources */,
+				465C1D802B957CE900AB62B8 /* GoogleService-Info.plist in Resources */,
 				46913FE62B82ACD70081BD96 /* Assets.xcassets in Resources */,
-				469140282B82B9040081BD96 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,33 +505,37 @@
 			files = (
 				4691403E2B8317FA0081BD96 /* LocalData.swift in Sources */,
 				46B87E692B8E348E005F34C5 /* FrameBuffer.swift in Sources */,
+				46BA82752B95B0CB00DA6AEA /* FriendRequest.swift in Sources */,
 				466D5AFC2B834075009669FB /* BirthDatePickerView.swift in Sources */,
 				46B87E672B8E2B10005F34C5 /* Frame.swift in Sources */,
 				46B87E5F2B8D8B18005F34C5 /* best.mlpackage in Sources */,
-				469140352B82BD670081BD96 /* InputView.swift in Sources */,
-				466D5B082B884807009669FB /* PreviewView.swift in Sources */,
-				464A9E852B900BEF0065478B /* DribbleSession.swift in Sources */,
+				469140352B82BD670081BD96 /* InputView&SecureInputView.swift in Sources */,
+				464A9E852B900BEF0065478B /* DribbleSessionView.swift in Sources */,
 				46B87E6E2B8EE047005F34C5 /* DribbleDetectorDelegate.swift in Sources */,
 				469140162B82B3580081BD96 /* ProfileView.swift in Sources */,
 				469140142B82B3350081BD96 /* StatBar.swift in Sources */,
+				4647517B2B91751000DC9284 /* FrequencyChartView.swift in Sources */,
 				4691401A2B82B3AB0081BD96 /* SettingsRowView.swift in Sources */,
 				46B87E612B8D8DE9005F34C5 /* Ball.swift in Sources */,
 				469140332B82BD300081BD96 /* RegistrationView.swift in Sources */,
 				46913FE42B82ACD50081BD96 /* ContentView.swift in Sources */,
+				46BA82802B964AA800DA6AEA /* AuthViewModelFriendExtension.swift in Sources */,
 				4691401F2B82B4280081BD96 /* BasketballStats.swift in Sources */,
 				469140262B82B5670081BD96 /* Extensions.swift in Sources */,
+				46BA827E2B96393C00DA6AEA /* AddFriendView.swift in Sources */,
 				469140372B82BEE50081BD96 /* LoginView.swift in Sources */,
 				469140182B82B3A30081BD96 /* ProfileSettingsView.swift in Sources */,
 				466D5AFE2B83D0C2009669FB /* CustomAlertView.swift in Sources */,
 				466D5B012B8696B9009669FB /* WorkoutsView.swift in Sources */,
-				46B87E6C2B8E9743005F34C5 /* VisionCalculations.swift in Sources */,
+				46B87E6C2B8E9743005F34C5 /* Calculator.swift in Sources */,
 				469140312B82BCFB0081BD96 /* AuthViewModel.swift in Sources */,
 				465DAF412B8A4F7800677CA8 /* Drills.swift in Sources */,
 				466D5B052B86E73D009669FB /* CameraPreviewView.swift in Sources */,
+				46BA82782B9633BC00DA6AEA /* FriendsView.swift in Sources */,
 				4691401D2B82B3D20081BD96 /* User.swift in Sources */,
 				465DAF3F2B8984E800677CA8 /* DribbleDetectorView.swift in Sources */,
 				46B87E592B8D7C4E005F34C5 /* BasketballLabApp.swift in Sources */,
-				466306F32B8AD4F300201529 /* ModelManager.swift in Sources */,
+				465C1D822B95975000AB62B8 /* iOSCheckboxToggleStyle.swift in Sources */,
 				469140392B82CCB60081BD96 /* MainView.swift in Sources */,
 				465DAF3D2B89361100677CA8 /* CameraViewModel.swift in Sources */,
 				469140242B82B5380081BD96 /* ButtonView.swift in Sources */,
@@ -674,9 +718,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.onikh.BasketballLab;
-				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = com.onikhoque.BasketballLab;
-				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = com.onikhoque.BasketballLab;
+				PRODUCT_BUNDLE_IDENTIFIER = com.onikhoque.BasketballLab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -715,9 +757,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.onikh.BasketballLab;
-				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = com.onikhoque.BasketballLab;
-				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = com.onikhoque.BasketballLab;
+				PRODUCT_BUNDLE_IDENTIFIER = com.onikhoque.BasketballLab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -875,6 +915,14 @@
 				minimumVersion = 1.1.0;
 			};
 		};
+		46BA82792B96353300DA6AEA /* XCRemoteSwiftPackageReference "SlidingTabView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/QuynhNguyen/SlidingTabView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -897,6 +945,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 46B87E622B8D8E4D005F34C5 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = DequeModule;
+		};
+		46BA827A2B96353300DA6AEA /* SlidingTabView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46BA82792B96353300DA6AEA /* XCRemoteSwiftPackageReference "SlidingTabView" */;
+			productName = SlidingTabView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

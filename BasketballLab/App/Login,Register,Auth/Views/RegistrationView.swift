@@ -12,13 +12,11 @@ struct RegistrationView: View {
     @State private var email = ""
     @State private var username = ""
     
-    @State private var firstName = ""
-    @State private var lastName = ""
-    
-    @State private var fullName = "" //use this for now....
-    
     @State private var password = ""
     @State private var confirmedPassword = ""
+    
+    @State private var ageCheckBox = false
+    @State private var TCCheckBox = false
     
     
     
@@ -30,15 +28,12 @@ struct RegistrationView: View {
     var body: some View {
         
         NavigationStack {
+            
             VStack {
                 
+                Spacer()
                 
-                Image("ashwin")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 300, height: 200)
-                    .padding(.top, 30)
-                    .padding(.bottom, 40)
+                Image(systemName: "gear")
                 
                 
                 VStack(spacing: 24) {
@@ -46,7 +41,7 @@ struct RegistrationView: View {
                     
                     
                     ZStack(alignment: .trailing) {
-                        InputView(text: $email, title: "Email Address", placeholder: "Enter email", autoCaps: false)
+                        InputView(text: $email, title: "Email Address", placeholder: "Enter email").keyboardType(.emailAddress)
                         
                         if !email.isEmpty {
                             if email.contains("@") && email.contains(".") && (email.hasSuffix("com") || email.hasSuffix("net") || email.hasSuffix("gov") || email.hasSuffix("edu") || email.hasSuffix("org")) && !email.contains(" ") {
@@ -66,8 +61,8 @@ struct RegistrationView: View {
                     
                     
                     ZStack(alignment: .trailing) {
-                        InputView(text: $fullName, title: "Full Name", placeholder: "Enter full name", autoCaps: true)
-                        if !fullName.isEmpty {
+                        InputView(text: $username, title: "Username", placeholder: "Enter full name")
+                        if !username.isEmpty && !username.contains(" ") {
                             Image(systemName: "checkmark.circle.fill").padding(.top, 22).padding(.trailing, 8)
                                 .imageScale(.large)
                                 .fontWeight(.bold)
@@ -79,7 +74,7 @@ struct RegistrationView: View {
                     
                     
                     ZStack(alignment: .trailing) {
-                        InputView(text: $password, title: "Create password", placeholder: "Create password", autoCaps: false, isSecureField: true)
+                        SecureInputView(text: $password, title: "Create password", placeholder: "Create password (at least 6 characters)")
                         if !password.isEmpty {
                             if password.count >= 6 {
                                 Image(systemName: "checkmark.circle.fill").padding(.top, 22).padding(.trailing, 8)
@@ -96,8 +91,8 @@ struct RegistrationView: View {
                     }
                     
                     ZStack(alignment: .trailing) {
-                        InputView(text: $confirmedPassword, title: "Confirm password", placeholder: "Confirm password", autoCaps: false, isSecureField: true)
-                        if !password.isEmpty && !confirmedPassword.isEmpty {
+                        SecureInputView(text: $confirmedPassword, title: "Confirm password", placeholder: "Confirm password")
+                        if !password.isEmpty && !confirmedPassword.isEmpty && confirmedPassword.count >= 6 {
                             if password == confirmedPassword {
                                 Image(systemName: "checkmark.circle.fill").padding(.top, 22).padding(.trailing, 8)
                                     .imageScale(.large)
@@ -115,22 +110,38 @@ struct RegistrationView: View {
                     
                     }.padding([.top, .bottom], 20)
                 
+                VStack(alignment: .leading, spacing: 8) {
+                    Toggle(isOn: $ageCheckBox) {
+                        Text("I am 13 years or older.").foregroundColor(Color.black).font(.headline)
+                    }.padding([.leading, .trailing], 40)
+                        .toggleStyle(iOSCheckboxToggleStyle())
+                    
+                    Toggle(isOn: $TCCheckBox) {
+                        HStack(spacing: 3) {
+                            Text("I have read the ").foregroundColor(Color.black)
+                            Link("privacy policy", destination: URL(string: "https://www.hackingwithswift.com/quick-start/swiftui")!)
+                             }
+                            .font(.headline)
+                    }.padding([.leading, .trailing], 40)
+                        .toggleStyle(iOSCheckboxToggleStyle())
+                }
+                
                 
                 
                 Button {
                     Task {
-                        try await authViewModel.createUser(withEmail: email, password: password, fullName: fullName)
+                        try await authViewModel.createUser(withEmail: email, password: password, username: username)
                     }
                 } label: {
-                    ButtonView(text: "Create Account", imageName: "arrow.right", widthProportion: (3/4))
+                    ButtonView(text: "Create Account", imageName: "arrow.right")
                         .background(Color.blue).foregroundColor(Color.white).cornerRadius(10)
-                        .padding(.top, 0)
+                        .padding(.top, 10)
                 }.disabled(!formIsValid)
                     .opacity(formIsValid ? 1.0 : 0.6)
                     .alert(authViewModel.errorMessage ?? "", isPresented: $authViewModel.alertShowing) { Button("OK", role: .cancel) { } }
                 
                 Spacer()
-                
+                                
                 HStack {
                     Text("Already have an account?")
                     Button {
@@ -139,10 +150,16 @@ struct RegistrationView: View {
                         Text("Log In")
                     }
                 }
-            }
-        }
-    }
-}
+                
+            }//vstack
+            
+            
+        }.onTapGesture { hideKeyboard() } //navigation stack
+    } //body
+} //struct
+
+
+
 
 
 extension RegistrationView : AuthenticationFormProtocol {
@@ -150,8 +167,11 @@ extension RegistrationView : AuthenticationFormProtocol {
         return !email.isEmpty 
         && email.contains("@")
         && !password.isEmpty
-        && !fullName.isEmpty
+        && !username.isEmpty
         && confirmedPassword == password
+        && !username.contains(" ")
+        && TCCheckBox
+        && ageCheckBox
     }
 }
 
@@ -159,3 +179,4 @@ extension RegistrationView : AuthenticationFormProtocol {
 #Preview {
     RegistrationView().environmentObject(AuthViewModel())
 }
+

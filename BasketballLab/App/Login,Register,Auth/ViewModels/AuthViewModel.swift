@@ -23,6 +23,7 @@ class AuthViewModel : ObservableObject {
     @Published var alertShowing = false
     
     init() {
+        print("Initialized authviewmodel")
         self.userSession = Auth.auth().currentUser
         
         Task {
@@ -44,12 +45,23 @@ class AuthViewModel : ObservableObject {
         }
     }
     
-    func createUser(withEmail email: String, password: String, fullName: String) async throws {
-        print("create user function ran")
+    func createUser(withEmail email: String, password: String, username: String) async throws {
+        
         do {
+            
+            let usernameQuerySnapshot = try await Firestore.firestore().collection("users").whereField("userName", isEqualTo: username).getDocuments()
+            
+            if !usernameQuerySnapshot.isEmpty {
+                // Username is already taken
+                self.errorMessage = "Username is already taken. Please choose another one."
+                self.alertShowing = true
+                return
+            }
+            
+            
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             self.userSession = result.user
-            let user = User(id: result.user.uid, fullName: fullName, email: email)
+            let user = User(id: result.user.uid, username: username, email: email)
             let encodedUser = try Firestore.Encoder().encode(user)
             try await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
             await fetchUser()
@@ -76,25 +88,24 @@ class AuthViewModel : ObservableObject {
     
     func deleteAccount() async throws {
         do {
-            
             guard let user = Auth.auth().currentUser else {return}
             try await user.delete()
             signOut()
-            
+            print("signed out")
         } catch {
-            print("Unable to delete user")
-            print("Error: \(error.localizedDescription)")
+            self.errorMessage = error.localizedDescription
+            self.alertShowing = true
         }
-        
-        
     }
     
+    
     func fetchUser() async {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        guard let snapshot = try? await Firestore.firestore().collection("users").document(uid).getDocument() else { return }
+        guard let uid = Auth.auth().currentUser?.uid else {print("couldn't get uid");return}
+        guard let snapshot = try? await Firestore.firestore().collection("users").document(uid).getDocument() else {print("couldn't get user");return}
         self.currentUser = try? snapshot.data(as: User.self)
-        
     }
+    
+    
     
     
 }

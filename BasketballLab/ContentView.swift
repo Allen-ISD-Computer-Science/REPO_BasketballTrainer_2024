@@ -15,7 +15,11 @@ struct ContentView: View {
         
         Group {
             if authViewModel.userSession != nil {
-                MainView()
+                if authViewModel.currentUser != nil {
+                    MainView()
+                } else {
+                    VStack{Spacer();ProgressView();Spacer()}
+                }
             } else {
                 LoginView()
             }

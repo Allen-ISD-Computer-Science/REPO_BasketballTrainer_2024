@@ -19,16 +19,27 @@ class AuthViewModel : ObservableObject {
     @Published var userSession : FirebaseAuth.User?
     @Published var currentUser : User?
     
+    @Published var friends : [User]?
+    @Published var receivedRequests : [User]?
+    @Published var outgoingRequests : [User]?
+    
     @Published var errorMessage : String? = nil
     @Published var alertShowing = false
     
     init() {
-        print("Initialized authviewmodel")
         self.userSession = Auth.auth().currentUser
         
         Task {
             await fetchUser()
+            do {
+                try await fetchOutgoingRequests()
+                try await fetchReceivedRequests()
+                try await fetchFriends()
+            } catch {
+                print(error.localizedDescription)
+            }
         }
+        print("Initialized authviewmodel")
     }
     
     
@@ -99,11 +110,13 @@ class AuthViewModel : ObservableObject {
     }
     
     
-    func fetchUser() async {
+    func fetchUser() async { //make throws
         guard let uid = Auth.auth().currentUser?.uid else {print("couldn't get uid");return}
         guard let snapshot = try? await Firestore.firestore().collection("users").document(uid).getDocument() else {print("couldn't get user");return}
         self.currentUser = try? snapshot.data(as: User.self)
     }
+    
+
     
     
     

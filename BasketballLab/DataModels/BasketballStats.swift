@@ -31,13 +31,6 @@ struct BasketballStats : Codable {
         }
     }
     
-    mutating func updateStats(dribbles: Int, fga: Int, fgm: Int, threePointFGA: Int, threePointFGM: Int) {
-        self.lifetimeDribbles += dribbles
-        self.lifetimeFGA += fga
-        self.lifetimeFGM += fgm
-        self.lifetime3PA += threePointFGA
-        self.lifetime3PM += threePointFGM
-    }
 
     
 }

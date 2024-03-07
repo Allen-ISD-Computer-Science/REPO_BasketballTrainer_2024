@@ -12,9 +12,22 @@ struct ViewFriendsView: View {
     @EnvironmentObject var authViewModel : AuthViewModel
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/).onAppear {
-            Task {
-                //try await authViewModel.getFriends()
+        
+        if let friends = authViewModel.friends {
+            if !friends.isEmpty {
+                ForEach(friends) { user in
+                    ReceivedRequestView(user: user)
+                }
+            } else {
+                List {
+                    Text("No friends to display. ")
+                }
+            }
+        } else {
+            VStack {
+                Spacer()
+                ProgressView()
+                Spacer()
             }
         }
     }
@@ -24,3 +37,5 @@ struct ViewFriendsView: View {
 #Preview {
     ViewFriendsView()
 }
+
+

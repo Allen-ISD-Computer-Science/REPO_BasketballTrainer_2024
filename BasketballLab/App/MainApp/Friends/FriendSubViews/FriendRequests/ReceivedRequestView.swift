@@ -7,30 +7,33 @@
 
 import SwiftUI
 
-struct MiniUserView: View {
+struct ReceivedRequestView: View {
     
-    var miniUser : MiniUser
+    var user : User
+    @EnvironmentObject var authViewModel : AuthViewModel
     
     var body: some View {
         VStack {
             HStack {
-                Text(miniUser.initials)
+                Text(user.initials)
                     .font(.title)
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
-                    .frame(width: 60, height: 60)
+                    .frame(width: 45, height: 45)
                     .background(Color(.systemGray))
                     .clipShape(Circle())//.padding(.horizontal)
                 
                 
-                Text(miniUser.username).padding(.horizontal)
+                Text(user.username).padding(.leading)
                 
                 
                 
                 Spacer()
                 
                 Button {
-                    
+                    Task {
+                        try await authViewModel.acceptFriendRequest(senderID: user.id)
+                    }
                 } label : {
                     Text("Accept").font(.footnote)
                         .lineLimit(1)
@@ -38,10 +41,12 @@ struct MiniUserView: View {
                         .frame(width: 70, height: 40)
                         .background(Color.blue)
                         .cornerRadius(10)
-                }
+                }.buttonStyle(.plain)
                 
                 Button {
-                    
+                    Task {
+                        try await authViewModel.declineFriendRequest(senderID: user.id)
+                    }
                 } label : {
                     Text("Decline").font(.footnote)
                         .lineLimit(1)
@@ -49,14 +54,14 @@ struct MiniUserView: View {
                         .frame(width: 70, height: 40)
                         .background(Color.red)
                         .cornerRadius(10)
-                }
+                }.buttonStyle(.plain)
                 
-            }.padding(.horizontal)
-            Divider()
+            }
+          //  Divider()
         }
     }
 }
 
 #Preview {
-    MiniUserView(miniUser: MiniUser(id: "skeugbkseugb", username: "onikh"))
+    ReceivedRequestView(user: User(id: "segkjbseg", username: "josh", email: "sfiu@gmail.com"))
 }

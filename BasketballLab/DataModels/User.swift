@@ -32,7 +32,7 @@ struct User : Identifiable, Codable {
     
 }
 
-struct MiniUser : Identifiable {
+struct MiniUser : Identifiable, Codable {
     let id: String
     let username : String
     var initials : String {

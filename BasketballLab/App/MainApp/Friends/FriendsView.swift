@@ -9,10 +9,8 @@ import SwiftUI
 import SlidingTabView
 
 struct FriendsView: View {
+    
     @State var tabIndex = 0
-    
-
-    
     
     var body: some View {
         

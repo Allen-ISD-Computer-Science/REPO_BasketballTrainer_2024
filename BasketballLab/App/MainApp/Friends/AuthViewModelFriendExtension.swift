@@ -65,7 +65,7 @@ extension AuthViewModel {
             
             self.errorMessage = "Succesfully sent request to " + username + "!"
             self.alertShowing = true
-            
+            try await fetchOutgoingRequests()
             
         } catch {
             print(error.localizedDescription)
@@ -73,63 +73,163 @@ extension AuthViewModel {
         
     }
     
-  /*  func getFriends() async throws{
+    func fetchFriends() async throws {
+        var users : [User] = []
         do {
             
             let db = Firestore.firestore()
             guard let senderID = self.currentUser?.id else {self.errorMessage = "couldnt get id of current user";self.alertShowing = true;return}
             
             let userDoc = db.collection("users").document(senderID)
-            
             let userSnapshot = try await userDoc.getDocument()
-            
-            let idst = userSnapshot.get("friends") as! [String]
-            
-            print(idst)
-            
-
-            
-            print(idst)
-            
-            
-            
-        } catch {
-            
-        }
-    } */
-    
-    func getOutgoingRequests() async throws -> [MiniUser] {
-        var users : [MiniUser] = []
-        do {
-            
-            let db = Firestore.firestore()
-            guard let senderID = self.currentUser?.id else {self.errorMessage = "couldnt get id of current user";self.alertShowing = true;return[]}
-            
-            let userDoc = db.collection("users").document(senderID)
-            
-            let userSnapshot = try await userDoc.getDocument()
-            
-            let requestIDs = userSnapshot.get("outgoingRequests") as! [String]
+            let requestIDs = userSnapshot.get("friends") as! [String]
             
             print(requestIDs)
             
             for id in requestIDs {
-                
                 let userDoc = db.collection("users").document(id)
                 let userSnapshot = try await userDoc.getDocument()
+                let user = try userSnapshot.data(as: User.self)
                 
-                let userID = userSnapshot.get("id") as! String
-                let username = userSnapshot.get("username") as! String
-                
-                users.append(MiniUser(id: userID, username: username))
-                
-                
+                users.append(user)
+                print("friend" + user.id)
             }
 
         } catch {
             print(error.localizedDescription)
         }
-        return users
+        self.friends = users
+    }
+    
+    func fetchOutgoingRequests() async throws {
+        var users : [User] = []
+        do {
+            
+            let db = Firestore.firestore()
+            guard let senderID = self.currentUser?.id else {self.errorMessage = "couldnt get id of current user";self.alertShowing = true;return}
+            
+            let userDoc = db.collection("users").document(senderID)
+            let userSnapshot = try await userDoc.getDocument()
+            let requestIDs = userSnapshot.get("outgoingRequests") as! [String]
+            
+            print(requestIDs)
+            
+            for id in requestIDs {
+                let userDoc = db.collection("users").document(id)
+                let userSnapshot = try await userDoc.getDocument()
+                let user = try userSnapshot.data(as: User.self)
+                
+                users.append(user)
+            }
+
+        } catch {
+            print(error.localizedDescription)
+        }
+        self.outgoingRequests = users
+    }
+    
+    func fetchReceivedRequests() async throws {
+        var users : [User] = []
+        do {
+            
+            let db = Firestore.firestore()
+            guard let senderID = self.currentUser?.id else {self.errorMessage = "couldnt get id of current user";self.alertShowing = true;return}
+            
+            let userDoc = db.collection("users").document(senderID)
+            let userSnapshot = try await userDoc.getDocument()
+            let requestIDs = userSnapshot.get("receivedRequests") as! [String]
+            
+            print(requestIDs)
+            
+            for id in requestIDs {
+                let userDoc = db.collection("users").document(id)
+                let userSnapshot = try await userDoc.getDocument()
+                let user = try userSnapshot.data(as: User.self)
+                
+                users.append(user)
+            }
+
+        } catch {
+            print(error.localizedDescription)
+        }
+        self.receivedRequests = users
+    }
+    
+    func acceptFriendRequest(senderID: String) async throws {
+        
+        do {
+            guard let recipientID = self.currentUser?.id else {self.errorMessage = "couldnt get id of current user";self.alertShowing = true;return}
+            
+            let db = Firestore.firestore()
+            
+            let recipientDoc = db.collection("users").document(recipientID)
+            let senderDoc = db.collection("users").document(senderID)
+            
+            // add each other as friends
+            try await recipientDoc.updateData([
+                "friends" : FieldValue.arrayUnion([senderID])
+            ])
+            try await senderDoc.updateData([
+                "friends" : FieldValue.arrayUnion([senderID])
+            ])
+            
+            //remove from outgoing/received requests
+            try await recipientDoc.updateData([
+                "receivedRequests" : FieldValue.arrayRemove([senderID])
+            ])
+            try await senderDoc.updateData([
+                "outgoingRequests" : FieldValue.arrayRemove([recipientID])
+            ])
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        try await fetchReceivedRequests()
+        try await fetchFriends()
+        
+    }
+    
+    func declineFriendRequest(senderID: String) async throws {
+        do {
+            guard let recipientID = self.currentUser?.id else {self.errorMessage = "couldnt get id of current user";self.alertShowing = true;return}
+            
+            let db = Firestore.firestore()
+            
+            let recipientDoc = db.collection("users").document(recipientID)
+            let senderDoc = db.collection("users").document(senderID)
+            
+            //remove from outgoing/received requests
+            try await recipientDoc.updateData([
+                "receivedRequests" : FieldValue.arrayRemove([senderID])
+            ])
+            try await senderDoc.updateData([
+                "outgoingRequests" : FieldValue.arrayRemove([recipientID])
+            ])
+        } catch {
+            print(error.localizedDescription)
+        }
+        try await fetchReceivedRequests()
+    }
+    
+    func cancelFriendRequest(recipientID: String) async throws {
+        do {
+            guard let senderID = self.currentUser?.id else {self.errorMessage = "couldnt get id of current user";self.alertShowing = true;return}
+            let db = Firestore.firestore()
+            
+            let recipientDoc = db.collection("users").document(recipientID)
+            let senderDoc = db.collection("users").document(senderID)
+            
+            try await recipientDoc.updateData([
+                "receivedRequests" : FieldValue.arrayRemove([senderID])
+            ])
+            try await senderDoc.updateData([
+                "outgoingRequests" : FieldValue.arrayRemove([recipientID])
+            ])
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        try await fetchOutgoingRequests()
     }
     
     

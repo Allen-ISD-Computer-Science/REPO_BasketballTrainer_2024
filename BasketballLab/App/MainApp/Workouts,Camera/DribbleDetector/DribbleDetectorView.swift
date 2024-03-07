@@ -81,7 +81,7 @@ struct DribbleDetectorView : View {
                 AppDelegate.orientationLock = .landscapeRight
             }
             .task {
-                print(cameraViewModel.configured)
+                print("is cameraviewmodel configured?" + String(cameraViewModel.configured))
                 await cameraViewModel.getAuthorization()
                 if cameraViewModel.configured == true {
                     cameraViewModel.setDelegate(delegate: dribbleDetectorDelegate)

@@ -73,9 +73,65 @@ extension AuthViewModel {
         
     }
     
-    func getFriends() async {
-        
+  /*  func getFriends() async throws{
+        do {
+            
+            let db = Firestore.firestore()
+            guard let senderID = self.currentUser?.id else {self.errorMessage = "couldnt get id of current user";self.alertShowing = true;return}
+            
+            let userDoc = db.collection("users").document(senderID)
+            
+            let userSnapshot = try await userDoc.getDocument()
+            
+            let idst = userSnapshot.get("friends") as! [String]
+            
+            print(idst)
+            
+
+            
+            print(idst)
+            
+            
+            
+        } catch {
+            
+        }
+    } */
+    
+    func getOutgoingRequests() async throws -> [MiniUser] {
+        var users : [MiniUser] = []
+        do {
+            
+            let db = Firestore.firestore()
+            guard let senderID = self.currentUser?.id else {self.errorMessage = "couldnt get id of current user";self.alertShowing = true;return[]}
+            
+            let userDoc = db.collection("users").document(senderID)
+            
+            let userSnapshot = try await userDoc.getDocument()
+            
+            let requestIDs = userSnapshot.get("outgoingRequests") as! [String]
+            
+            print(requestIDs)
+            
+            for id in requestIDs {
+                
+                let userDoc = db.collection("users").document(id)
+                let userSnapshot = try await userDoc.getDocument()
+                
+                let userID = userSnapshot.get("id") as! String
+                let username = userSnapshot.get("username") as! String
+                
+                users.append(MiniUser(id: userID, username: username))
+                
+                
+            }
+
+        } catch {
+            print(error.localizedDescription)
+        }
+        return users
     }
+    
     
     
     

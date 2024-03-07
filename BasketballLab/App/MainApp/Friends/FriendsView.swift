@@ -11,6 +11,8 @@ import SlidingTabView
 struct FriendsView: View {
     @State var tabIndex = 0
     
+
+    
     
     var body: some View {
         
@@ -21,9 +23,9 @@ struct FriendsView: View {
             
             switch tabIndex {
             case 0:
-                Text("0")
+                ViewFriendsView()
             case 1:
-                Text("1")
+                RequestsView()
             case 2:
                 AddFriendView()
             default:

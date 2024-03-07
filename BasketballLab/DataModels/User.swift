@@ -32,6 +32,20 @@ struct User : Identifiable, Codable {
     
 }
 
+struct MiniUser : Identifiable {
+    let id: String
+    let username : String
+    var initials : String {
+        let formatter = PersonNameComponentsFormatter()
+        if let components = formatter.personNameComponents(from: username) {
+            formatter.style = .abbreviated
+            return formatter.string(from: components)
+        } else {
+            return ""
+        }
+    }
+}
+
 struct FriendRequest : Codable {
     let senderID : String
     let recipientID : String

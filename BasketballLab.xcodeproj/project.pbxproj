@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4647517B2B91751000DC9284 /* FrequencyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4647517A2B91751000DC9284 /* FrequencyChartView.swift */; };
 		464A9E852B900BEF0065478B /* DribbleSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A9E842B900BEF0065478B /* DribbleSessionView.swift */; };
+		4651F25E2B99184F00D56F00 /* ViewFriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4651F25D2B99184F00D56F00 /* ViewFriendsView.swift */; };
+		4651F2602B99235200D56F00 /* RequestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4651F25F2B99235200D56F00 /* RequestsView.swift */; };
+		4651F2622B9933C200D56F00 /* MiniUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4651F2612B9933C200D56F00 /* MiniUserView.swift */; };
 		465C1D802B957CE900AB62B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 465C1D7F2B957CE900AB62B8 /* GoogleService-Info.plist */; };
 		465C1D822B95975000AB62B8 /* iOSCheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465C1D812B95975000AB62B8 /* iOSCheckboxToggleStyle.swift */; };
 		465DAF3D2B89361100677CA8 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DAF3C2B89361100677CA8 /* CameraViewModel.swift */; };
@@ -77,6 +80,9 @@
 /* Begin PBXFileReference section */
 		4647517A2B91751000DC9284 /* FrequencyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyChartView.swift; sourceTree = "<group>"; };
 		464A9E842B900BEF0065478B /* DribbleSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbleSessionView.swift; sourceTree = "<group>"; };
+		4651F25D2B99184F00D56F00 /* ViewFriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFriendsView.swift; sourceTree = "<group>"; };
+		4651F25F2B99235200D56F00 /* RequestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsView.swift; sourceTree = "<group>"; };
+		4651F2612B9933C200D56F00 /* MiniUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniUserView.swift; sourceTree = "<group>"; };
 		465C1D7F2B957CE900AB62B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		465C1D812B95975000AB62B8 /* iOSCheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSCheckboxToggleStyle.swift; sourceTree = "<group>"; };
 		465DAF3C2B89361100677CA8 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
@@ -355,6 +361,9 @@
 			isa = PBXGroup;
 			children = (
 				46BA827D2B96393C00DA6AEA /* AddFriendView.swift */,
+				4651F25F2B99235200D56F00 /* RequestsView.swift */,
+				4651F25D2B99184F00D56F00 /* ViewFriendsView.swift */,
+				4651F2612B9933C200D56F00 /* MiniUserView.swift */,
 			);
 			path = FriendSubViews;
 			sourceTree = "<group>";
@@ -510,11 +519,13 @@
 				46B87E672B8E2B10005F34C5 /* Frame.swift in Sources */,
 				46B87E5F2B8D8B18005F34C5 /* best.mlpackage in Sources */,
 				469140352B82BD670081BD96 /* InputView&SecureInputView.swift in Sources */,
+				4651F2622B9933C200D56F00 /* MiniUserView.swift in Sources */,
 				464A9E852B900BEF0065478B /* DribbleSessionView.swift in Sources */,
 				46B87E6E2B8EE047005F34C5 /* DribbleDetectorDelegate.swift in Sources */,
 				469140162B82B3580081BD96 /* ProfileView.swift in Sources */,
 				469140142B82B3350081BD96 /* StatBar.swift in Sources */,
 				4647517B2B91751000DC9284 /* FrequencyChartView.swift in Sources */,
+				4651F2602B99235200D56F00 /* RequestsView.swift in Sources */,
 				4691401A2B82B3AB0081BD96 /* SettingsRowView.swift in Sources */,
 				46B87E612B8D8DE9005F34C5 /* Ball.swift in Sources */,
 				469140332B82BD300081BD96 /* RegistrationView.swift in Sources */,
@@ -536,6 +547,7 @@
 				465DAF3F2B8984E800677CA8 /* DribbleDetectorView.swift in Sources */,
 				46B87E592B8D7C4E005F34C5 /* BasketballLabApp.swift in Sources */,
 				465C1D822B95975000AB62B8 /* iOSCheckboxToggleStyle.swift in Sources */,
+				4651F25E2B99184F00D56F00 /* ViewFriendsView.swift in Sources */,
 				469140392B82CCB60081BD96 /* MainView.swift in Sources */,
 				465DAF3D2B89361100677CA8 /* CameraViewModel.swift in Sources */,
 				469140242B82B5380081BD96 /* ButtonView.swift in Sources */,

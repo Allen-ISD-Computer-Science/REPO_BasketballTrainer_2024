@@ -10,40 +10,46 @@ import SwiftUI
 struct WorkoutsView: View {
     
     private var cameraViewModel = CameraViewModel()
-    @State var navigationPath = NavigationPath()
+    //@State var navigationPath = NavigationPath()
     @State var rotateToPortrait = false
     
     var body: some View {
         
-        NavigationStack(path: $navigationPath) {
+        NavigationStack {
             
-            NavigationLink("Dribble Detection Drill") {
-                DribbleDetectorView(cameraViewModel: cameraViewModel, rotateToPortrait: $rotateToPortrait).toolbar(.hidden, for: .tabBar).navigationBarBackButtonHidden(true)
-            }
-            
-            NavigationLink("Test") {
-                Text("g").onAppear {
-                    print(navigationPath.count)
+            VStack {
+                ScrollView {
+                    VStack {
+                        NavigationLink {
+                            DribbleDetectorView(cameraViewModel: cameraViewModel).toolbar(.hidden, for: .tabBar).navigationBarBackButtonHidden(true)
+                        } label : {
+                            DrillSelectorView(title: "Dribble", description: "Count dribbles per session and see workout intensity over time")
+                           // Text("test")
+                        }
+                        
+                       /* NavigationLink {
+                            DribbleDetectorView(cameraViewModel: cameraViewModel, rotateToPortrait: $rotateToPortrait).toolbar(.hidden, for: .tabBar).navigationBarBackButtonHidden(true)
+                        } label : {
+                            DrillSelectorView(title: "Dribble", description: "Count dribbles per session and see workout intensity over time", imageName: "dribble")
+                        }
+                        
+                        NavigationLink {
+                            DribbleDetectorView(cameraViewModel: cameraViewModel, rotateToPortrait: $rotateToPortrait).toolbar(.hidden, for: .tabBar).navigationBarBackButtonHidden(true)
+                        } label : {
+                            DrillSelectorView(title: "Dribble", description: "Count dribbles per session and see workout intensity over time", imageName: "dribble")
+                        } */
+                        
+                        Spacer()
+                    }.frame(maxWidth: .infinity)
+                        .onAppear() {
+
+                    }
                 }
-            }
+            }.navigationTitle("Workouts")
             
-            if rotateToPortrait == true {
-                Text("test").onAppear {
-                    print("your bullshit worked")
-                    rotateToPortrait = false
-                }
-            }
-            
-        }.onAppear() {
-            AppDelegate.orientationLock = .allButUpsideDown
-            
-            if UIDevice.current.orientation.isPortrait {
-                let windowScene = UIApplication.shared.connectedScenes.first(where: { $0 is UIWindowScene }) as? UIWindowScene
-                windowScene?.requestGeometryUpdate(.iOS(
-                    interfaceOrientations: .portrait
-                ))
-            }
+
         }
+
         
     }
 }

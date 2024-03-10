@@ -20,7 +20,7 @@ struct DribbleSessionView : View {
         VStack() {
             
             Text("Training Results").font(.system(size: 40)).fontWeight(.semibold).frame(height: 100, alignment: .center)
-            
+
             Text("Free Dribbling").font(.title)
             
             Text(String("Total Dribbles: " + String(trainingSession.dribbles.count)))
@@ -43,16 +43,29 @@ struct DribbleSessionView : View {
             
         }.onAppear {
             
-            print(UIDevice.current.orientation.isPortrait)
-            AppDelegate.orientationLock = .allButUpsideDown
             
-            if UIDevice.current.orientation.isPortrait {
-                print("view is portrait, code ran")
-                let windowScene = UIApplication.shared.connectedScenes.first(where: { $0 is UIWindowScene }) as? UIWindowScene
-                windowScene?.requestGeometryUpdate(.iOS(
+           /* if #available(iOS 16.0, *) {
+                guard
+                    let windowScene = UIApplication.shared.connectedScenes.first(where: { $0 is UIWindowScene }) as? UIWindowScene,
+                    let rootViewController = windowScene.windows.first?.rootViewController
+                else { return }
+                rootViewController.debugSupportedOrientations()
+                
+                rootViewController.setNeedsUpdateOfSupportedInterfaceOrientations()
+                windowScene.requestGeometryUpdate(.iOS(
                     interfaceOrientations: .portrait
                 ))
+            }  */
+            
+            let errorHandler: (Error) -> Void = { error in
+                print("An error occurred: \(error)")
             }
+            
+            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+            windowScene.requestGeometryUpdate(.iOS(interfaceOrientations: .portrait), errorHandler: errorHandler)
+            
+        }.onDisappear {
+            print("onDisappear session view ran")
         }
         
         
@@ -89,4 +102,27 @@ struct DribbleSession {
     
     
     
+}
+
+
+
+extension UIViewController {
+  func debugSupportedOrientations() {
+    let mask = supportedInterfaceOrientations
+    var supported = [String]()
+    if mask.contains(.portrait) {
+      supported.append("Portrait")
+    }
+    if mask.contains(.landscapeLeft) {
+      supported.append("Landscape Left")
+    }
+    if mask.contains(.landscapeRight) {
+      supported.append("Landscape Right")
+    }
+    if mask.contains(.portraitUpsideDown) {
+      supported.append("Portrait Upside Down")
+    }
+    let orientationString = supported.joined(separator: ", ")
+    print("Supported Orientations: \(orientationString)")
+  }
 }

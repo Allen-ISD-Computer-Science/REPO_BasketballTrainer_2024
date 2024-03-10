@@ -9,13 +9,13 @@ import SwiftUI
 
 struct ReceivedRequestView: View {
     
-    var user : User
+    let user : User
     @EnvironmentObject var authViewModel : AuthViewModel
     
     var body: some View {
         VStack {
             HStack {
-                Text(user.initials)
+                Text(String(user.username.first!.uppercased()))
                     .font(.title)
                     .fontWeight(.semibold)
                     .foregroundColor(.white)

@@ -20,15 +20,7 @@ struct User : Identifiable, Codable {
     
     
     
-    var initials : String {
-        let formatter = PersonNameComponentsFormatter()
-        if let components = formatter.personNameComponents(from: username) {
-            formatter.style = .abbreviated
-            return formatter.string(from: components)
-        } else {
-            return ""
-        }
-    }
+
     
 }
 

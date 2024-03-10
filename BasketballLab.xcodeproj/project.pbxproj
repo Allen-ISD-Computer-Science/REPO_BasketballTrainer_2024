@@ -15,6 +15,8 @@
 		4651F2642B994DFD00D56F00 /* OutgoingRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4651F2632B994DFD00D56F00 /* OutgoingRequestView.swift */; };
 		465C1D802B957CE900AB62B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 465C1D7F2B957CE900AB62B8 /* GoogleService-Info.plist */; };
 		465C1D822B95975000AB62B8 /* iOSCheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465C1D812B95975000AB62B8 /* iOSCheckboxToggleStyle.swift */; };
+		465D97802B9991C4007EAE82 /* FriendRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465D977F2B9991C4007EAE82 /* FriendRowView.swift */; };
+		465D97842B9A53D5007EAE82 /* FriendProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465D97832B9A53D5007EAE82 /* FriendProfileView.swift */; };
 		465DAF3D2B89361100677CA8 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DAF3C2B89361100677CA8 /* CameraViewModel.swift */; };
 		465DAF3F2B8984E800677CA8 /* DribbleDetectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DAF3E2B8984E800677CA8 /* DribbleDetectorView.swift */; };
 		465DAF412B8A4F7800677CA8 /* Drills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DAF402B8A4F7800677CA8 /* Drills.swift */; };
@@ -59,6 +61,7 @@
 		46BA827B2B96353300DA6AEA /* SlidingTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 46BA827A2B96353300DA6AEA /* SlidingTabView */; };
 		46BA827E2B96393C00DA6AEA /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BA827D2B96393C00DA6AEA /* AddFriendView.swift */; };
 		46BA82802B964AA800DA6AEA /* AuthViewModelFriendExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BA827F2B964AA800DA6AEA /* AuthViewModelFriendExtension.swift */; };
+		46C6BDED2B9AA4C50043A473 /* DrillSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C6BDEC2B9AA4C50043A473 /* DrillSelectorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,8 @@
 		4651F2632B994DFD00D56F00 /* OutgoingRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingRequestView.swift; sourceTree = "<group>"; };
 		465C1D7F2B957CE900AB62B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		465C1D812B95975000AB62B8 /* iOSCheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSCheckboxToggleStyle.swift; sourceTree = "<group>"; };
+		465D977F2B9991C4007EAE82 /* FriendRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRowView.swift; sourceTree = "<group>"; };
+		465D97832B9A53D5007EAE82 /* FriendProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileView.swift; sourceTree = "<group>"; };
 		465DAF3C2B89361100677CA8 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		465DAF3E2B8984E800677CA8 /* DribbleDetectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbleDetectorView.swift; sourceTree = "<group>"; };
 		465DAF402B8A4F7800677CA8 /* Drills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drills.swift; sourceTree = "<group>"; };
@@ -130,6 +135,7 @@
 		46BA82772B9633BC00DA6AEA /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
 		46BA827D2B96393C00DA6AEA /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendView.swift; sourceTree = "<group>"; };
 		46BA827F2B964AA800DA6AEA /* AuthViewModelFriendExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModelFriendExtension.swift; sourceTree = "<group>"; };
+		46C6BDEC2B9AA4C50043A473 /* DrillSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillSelectorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,10 +218,20 @@
 			path = FriendRequests;
 			sourceTree = "<group>";
 		};
+		465D97852B9A941D007EAE82 /* ViewFriends */ = {
+			isa = PBXGroup;
+			children = (
+				4651F25D2B99184F00D56F00 /* ViewFriendsView.swift */,
+				465D977F2B9991C4007EAE82 /* FriendRowView.swift */,
+			);
+			path = ViewFriends;
+			sourceTree = "<group>";
+		};
 		466D5AFF2B8695AC009669FB /* Workouts,Camera */ = {
 			isa = PBXGroup;
 			children = (
 				466D5B002B8696B9009669FB /* WorkoutsView.swift */,
+				46C6BDEC2B9AA4C50043A473 /* DrillSelectorView.swift */,
 				465C1D7E2B95663100AB62B8 /* Camera */,
 				464A9E832B900BCC0065478B /* DribbleDetector */,
 			);
@@ -372,9 +388,10 @@
 		46BA827C2B96392A00DA6AEA /* FriendSubViews */ = {
 			isa = PBXGroup;
 			children = (
+				465D97832B9A53D5007EAE82 /* FriendProfileView.swift */,
 				46BA827D2B96393C00DA6AEA /* AddFriendView.swift */,
 				465D977E2B996185007EAE82 /* FriendRequests */,
-				4651F25D2B99184F00D56F00 /* ViewFriendsView.swift */,
+				465D97852B9A941D007EAE82 /* ViewFriends */,
 			);
 			path = FriendSubViews;
 			sourceTree = "<group>";
@@ -527,7 +544,9 @@
 				46B87E692B8E348E005F34C5 /* FrameBuffer.swift in Sources */,
 				46BA82752B95B0CB00DA6AEA /* FriendRequest.swift in Sources */,
 				466D5AFC2B834075009669FB /* BirthDatePickerView.swift in Sources */,
+				465D97802B9991C4007EAE82 /* FriendRowView.swift in Sources */,
 				46B87E672B8E2B10005F34C5 /* Frame.swift in Sources */,
+				46C6BDED2B9AA4C50043A473 /* DrillSelectorView.swift in Sources */,
 				46B87E5F2B8D8B18005F34C5 /* best.mlpackage in Sources */,
 				469140352B82BD670081BD96 /* InputView&SecureInputView.swift in Sources */,
 				4651F2622B9933C200D56F00 /* ReceivedRequestView.swift in Sources */,
@@ -549,6 +568,7 @@
 				469140182B82B3A30081BD96 /* ProfileSettingsView.swift in Sources */,
 				466D5AFE2B83D0C2009669FB /* CustomAlertView.swift in Sources */,
 				466D5B012B8696B9009669FB /* WorkoutsView.swift in Sources */,
+				465D97842B9A53D5007EAE82 /* FriendProfileView.swift in Sources */,
 				46B87E6C2B8E9743005F34C5 /* Calculator.swift in Sources */,
 				469140312B82BCFB0081BD96 /* AuthViewModel.swift in Sources */,
 				465DAF412B8A4F7800677CA8 /* Drills.swift in Sources */,

@@ -18,7 +18,7 @@ struct ProfileSettingsView: View {
             List {
                 Section {
                     HStack {
-                        Text(user.initials)
+                        Text(String(user.username.first!.uppercased()))
                             .font(.title)
                             .fontWeight(.semibold)
                             .foregroundColor(.white)

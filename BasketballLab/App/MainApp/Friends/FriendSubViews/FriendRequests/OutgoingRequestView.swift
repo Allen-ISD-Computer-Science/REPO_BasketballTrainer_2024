@@ -10,12 +10,12 @@ import SwiftUI
 struct OutgoingRequestView: View {
     
     @EnvironmentObject var authViewModel : AuthViewModel
-    var user : User
+    let user : User
     
     var body: some View {
         VStack {
             HStack {
-                Text(user.initials)
+                Text(String(user.username.first!.uppercased()))
                     .font(.title)
                     .fontWeight(.semibold)
                     .foregroundColor(.white)

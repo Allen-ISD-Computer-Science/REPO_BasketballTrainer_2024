@@ -84,7 +84,7 @@ class ViewData {
         
         let previewLayer = cameraView.view.layer as? AVCaptureVideoPreviewLayer
         previewLayer?.zPosition = 0
-        cameraView.view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+       // cameraView.view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         previewLayer?.session = self.captureSession
         
         if let device = self.captureDevice, let preview = previewLayer {

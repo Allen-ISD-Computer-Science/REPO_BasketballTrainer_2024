@@ -32,18 +32,7 @@ extension View {
         UIApplication.shared.sendAction(resign, to: nil, from: nil, for: nil)
     }
     
-    func enablePortraitMode() {
-        AppDelegate.orientationLock = .allButUpsideDown
-        
-        if UIDevice.current.orientation.isPortrait {
-            print("view is portrait, code ran")
-            let windowScene = UIApplication.shared.connectedScenes.first(where: { $0 is UIWindowScene }) as? UIWindowScene
-            windowScene?.requestGeometryUpdate(.iOS(
-                interfaceOrientations: .portrait
-            ))
-        }
 
-    }
 }
 
 

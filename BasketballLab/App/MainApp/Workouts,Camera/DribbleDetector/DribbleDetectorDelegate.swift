@@ -62,8 +62,14 @@ class DribbleDetectorDelegate : NSObject, ObservableObject, AVCaptureVideoDataOu
     }
     
     func createImageRequestHandler(cvPixelBuffer: CVPixelBuffer, orientation: CGImagePropertyOrientation) -> VNImageRequestHandler {
-        return VNImageRequestHandler(cvPixelBuffer: cvPixelBuffer, orientation: orientation, options: [:])
+        var requestHandlerOptions: [VNImageOption: Any] = [:]
+        
+        // Set the scale fit option to preserve aspect ratio
+       // requestHandlerOptions[VNImageOption.scaleOption] = VNImageScalingMode.scaleFit.rawValue
+        
+        return VNImageRequestHandler(cvPixelBuffer: cvPixelBuffer, orientation: orientation, options: requestHandlerOptions)
     }
+
     
 
     
@@ -88,13 +94,14 @@ class DribbleDetectorDelegate : NSObject, ObservableObject, AVCaptureVideoDataOu
                 let ball = results.first as? VNRecognizedObjectObservation // first object
                 
                 if ball != nil {
+                    print("X:  \(ball?.boundingBox.minX ?? 21)    Y:  \(ball?.boundingBox.minY ?? 21)")
                     let ball = Ball(
                         x: Int(UIScreen.main.bounds.width*(ball?.boundingBox.midX)!),
                         y: Int(UIScreen.main.bounds.width*(ball?.boundingBox.midY)!),
                         height: Int(UIScreen.main.bounds.width*(ball?.boundingBox.height)!))
                     
                     self.frameBuffer.addLocationFrame(frame: Frame(ball: ball))
-                    print("X coord: " + String(ball.x) + "   Y coord: " )
+                    //print("X coord: " + String(ball.x) + "   Y coord: " + String(ball.y))
                     
                 } else {
                     self.frameBuffer.addLocationFrame(frame: Frame(ball: nil))
@@ -112,8 +119,9 @@ class DribbleDetectorDelegate : NSObject, ObservableObject, AVCaptureVideoDataOu
             for observation in results where observation is VNRecognizedObjectObservation {
                 guard let objectObservation = observation as? VNRecognizedObjectObservation else { continue }
                 // Transformations
-                let objectBounds = VNImageRectForNormalizedRect(objectObservation.boundingBox, Int(UIScreen.main.bounds.size.width), Int(UIScreen.main.bounds.size.height))
-                let transformedBounds = CGRect(x: objectBounds.minX, y: objectBounds.maxY, width: objectBounds.maxX - objectBounds.minX, height: objectBounds.maxY - objectBounds.minY)
+                let objectBounds = VNImageRectForNormalizedRect(objectObservation.boundingBox, 960, 540)
+                let transformedBounds = CGRect(x: objectBounds.minX, y: UIScreen.main.bounds.height - objectBounds.maxY, width: objectBounds.maxX - objectBounds.minX, height: objectBounds.maxY - objectBounds.minY)
+                //let transformedBounds = CGRect(x: 100, y: 100, width: 30, height: 30)
                 let boxLayer = self.drawBoundingBox(transformedBounds)
                 detectionLayer.addSublayer(boxLayer)
             }

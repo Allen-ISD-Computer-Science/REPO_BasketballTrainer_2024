@@ -32,9 +32,11 @@ class AuthViewModel : ObservableObject {
         Task {
             await fetchUser()
             do {
-                try await fetchOutgoingRequests()
-                try await fetchReceivedRequests()
-                try await fetchFriends()
+                if Auth.auth().currentUser != nil {
+                    try await fetchOutgoingRequests()
+                    try await fetchReceivedRequests()
+                    try await fetchFriends()
+                }
             } catch {
                 print(error.localizedDescription)
             }
@@ -90,6 +92,7 @@ class AuthViewModel : ObservableObject {
             self.userSession = nil //wipes out userSession and brings us to login screen
             self.currentUser = nil //make currentUser nil
             self.errorMessage = nil
+            makePropertiesNil()
         } catch {
             print("Failed to sign out with error \(error.localizedDescription)")
             self.errorMessage = "Failed to sign out"
@@ -117,7 +120,11 @@ class AuthViewModel : ObservableObject {
     }
     
 
-    
+    func makePropertiesNil() {
+        self.friends = nil
+        self.outgoingRequests = nil
+        self.receivedRequests = nil
+    }
     
     
     

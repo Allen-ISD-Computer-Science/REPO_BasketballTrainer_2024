@@ -28,7 +28,7 @@ struct FrequencyChartView : View {
         .chartYAxisLabel(position: .leading, alignment: .center) {
             Text("Dribbles/10s")
         }.onAppear {
-            enablePortraitMode()
+            
         }
     }
 }

@@ -13,7 +13,7 @@ struct DribbleDetectorView : View {
     
     @Bindable var cameraViewModel : CameraViewModel
     @StateObject var dribbleDetectorDelegate = DribbleDetectorDelegate()
-    @Binding var rotateToPortrait : Bool
+
     
     @Environment(\.dismiss) var dismiss
     
@@ -21,7 +21,8 @@ struct DribbleDetectorView : View {
         
             ZStack {
                 
-                cameraViewModel.cameraView.ignoresSafeArea()
+                    cameraViewModel.cameraView
+                        .ignoresSafeArea()
                 
                 VStack {
                     
@@ -32,18 +33,35 @@ struct DribbleDetectorView : View {
                             dismiss()
                             print("after")
                         } label : {
-                            Image(systemName: "xmark")
-                              .foregroundColor(.white)
-                              .padding() // Add padding for aesthetics (optional)
-                              .background(
-                                Circle()
-                                  .fill(Color.red) // Change background color if needed
-                              ).padding()
+                            Image(systemName: "xmark").foregroundColor(.white).padding().background(Circle().fill(Color.red)).padding()
                         }
                         Spacer()
                     }
                     
-                    Spacer()
+                    Spacer().onAppear {
+                        let errorHandler: (Error) -> Void = { error in
+                            print("An error occurred: \(error)")
+                        }
+                        if #available(iOS 16.0, *) {
+                                guard
+                                    let rootViewController = UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.rootViewController,
+                                    let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+                                else { return }
+                                rootViewController.setNeedsUpdateOfSupportedInterfaceOrientations()
+                                windowScene.requestGeometryUpdate(.iOS(
+                                    interfaceOrientations: windowScene.interfaceOrientation.isLandscape
+                                        ? .portrait
+                                        : .landscapeRight
+                                ))
+                            } else {
+                               // UIDevice.current.setValue(rotateOrientation.rawValue, forKey: "orientation")
+                            }
+                        
+ 
+                          
+                          
+                          
+                    }
                     
                     NavigationLink(destination: DribbleSessionView(trainingSession: $dribbleDetectorDelegate.trainingSession)) {
                             ButtonView(text: "End Session", imageName: "xmark").background(Color.red).foregroundColor(.white).cornerRadius(10)
@@ -56,32 +74,21 @@ struct DribbleDetectorView : View {
               
             }
             .onDisappear {
+                print("onDisappear dribble detector ran")
                 cameraViewModel.viewData.previewObservation = nil
                 cameraViewModel.captureSession.stopRunning()
                 dribbleDetectorDelegate.destroySession()
-                print("stopped running")
-                rotateToPortrait = true
+               // print("stopped running")
             }
             .onAppear() {
+                print("onAppear dribble detector ran whole")
                 dribbleDetectorDelegate.cameraViewModel = cameraViewModel;
                 dribbleDetectorDelegate.setUpSession()
-                if #available(iOS 16.0, *) {
-                    guard
-                        let windowScene = UIApplication.shared.connectedScenes.first(where: { $0 is UIWindowScene }) as? UIWindowScene,
-                        let rootViewController = windowScene.windows.first?.rootViewController
-                    else { return }
+                
 
-                    rootViewController.setNeedsUpdateOfSupportedInterfaceOrientations()
-                    windowScene.requestGeometryUpdate(.iOS(
-                        interfaceOrientations: windowScene.interfaceOrientation.isLandscape
-                            ? .portrait
-                            : .landscapeRight
-                    ))
-                }
-                AppDelegate.orientationLock = .landscapeRight
+                
             }
             .task {
-                print("is cameraviewmodel configured?" + String(cameraViewModel.configured))
                 await cameraViewModel.getAuthorization()
                 if cameraViewModel.configured == true {
                     cameraViewModel.setDelegate(delegate: dribbleDetectorDelegate)

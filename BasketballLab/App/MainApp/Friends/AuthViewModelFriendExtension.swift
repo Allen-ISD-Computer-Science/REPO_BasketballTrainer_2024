@@ -36,7 +36,7 @@ extension AuthViewModel {
             let outgoingRequests = recipientData.get("outgoingRequests") as! [String]
             let receivedRequests = recipientData.get("receivedRequests") as! [String]
             
-            guard let senderID = self.currentUser?.id else {self.errorMessage = "couldnt get id of current user";self.alertShowing = true;return}
+            guard let senderID = self.currentUser?.id else {self.errorMessage = "sendFriendRequest: couldnt get id of current user";self.alertShowing = true;return}
             
             let senderDoc = db.collection("users").document(senderID)
             let recipientDoc = db.collection("users").document(recipientID)
@@ -78,7 +78,7 @@ extension AuthViewModel {
         do {
             
             let db = Firestore.firestore()
-            guard let senderID = self.currentUser?.id else {self.errorMessage = "couldnt get id of current user";self.alertShowing = true;return}
+            guard let senderID = self.currentUser?.id else {print("fetchFriends: couldnt get id of current user");self.errorMessage = "fetchFriends: couldnt get id of current auser";self.alertShowing = true;return}
             
             let userDoc = db.collection("users").document(senderID)
             let userSnapshot = try await userDoc.getDocument()
@@ -106,7 +106,7 @@ extension AuthViewModel {
         do {
             
             let db = Firestore.firestore()
-            guard let senderID = self.currentUser?.id else {self.errorMessage = "couldnt get id of current user";self.alertShowing = true;return}
+            guard let senderID = self.currentUser?.id else {self.errorMessage = "fetchOutgoingRequests: couldnt get id of current user";self.alertShowing = true;return}
             
             let userDoc = db.collection("users").document(senderID)
             let userSnapshot = try await userDoc.getDocument()
@@ -133,7 +133,7 @@ extension AuthViewModel {
         do {
             
             let db = Firestore.firestore()
-            guard let senderID = self.currentUser?.id else {self.errorMessage = "couldnt get id of current user";self.alertShowing = true;return}
+            guard let senderID = self.currentUser?.id else {self.errorMessage = "fetchReceivedRequests: couldnt get id of current user";self.alertShowing = true;return}
             
             let userDoc = db.collection("users").document(senderID)
             let userSnapshot = try await userDoc.getDocument()
@@ -156,9 +156,8 @@ extension AuthViewModel {
     }
     
     func acceptFriendRequest(senderID: String) async throws {
-        
         do {
-            guard let recipientID = self.currentUser?.id else {self.errorMessage = "couldnt get id of current user";self.alertShowing = true;return}
+            guard let recipientID = self.currentUser?.id else {self.errorMessage = "acceptFriendRequest: couldnt get id of current user";self.alertShowing = true;return}
             
             let db = Firestore.firestore()
             
@@ -186,7 +185,6 @@ extension AuthViewModel {
         
         try await fetchReceivedRequests()
         try await fetchFriends()
-        
     }
     
     func declineFriendRequest(senderID: String) async throws {

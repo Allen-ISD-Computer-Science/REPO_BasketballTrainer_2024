@@ -6,6 +6,14 @@ Our aim is to create a product that makes learning basketball accessible to anyo
 
 Our app, called Swish Lab, whose source code can be found on the iOSDev branch, is a basketball trainer that utilized custom-trained object detection models to give users feedback on their basketball practices. Our two main objectives are tracking activity and shot efficiency during a workout, which is calculated by counting dribbles and when those dribbles happened, allowing users to see a visualized graph of effort put in during a workout to improve workout efficiency and consistency, as well as track made and missed shots over time to see their efficiency and consistency from the free throw, three point line and general field goals. These are all totaled at the end of every training session, so users can see their lifetime total dribbles, and efficiency on all shooting splits. Users can also friend other users, allowing them to see the stats of others and their most recent training session stats.
 
+# Dribble Detection
+
+## Flaws and Possible Solutions ##
+
+# Shot Detection
+
+## Flaws and Possible Solutions ##
+
 # How to Download
 
 The open beta of the app is available now through TestFlight, Apple's beta testing platform. Anyone can test it. Just go to the App Store, download TestFlight, and navigate to this link on your iPhone: 

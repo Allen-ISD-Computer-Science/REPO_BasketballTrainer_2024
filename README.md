@@ -1,6 +1,13 @@
 # Vision Statement
 
 Our aim is to create a product that makes learning basketball accessible to anyone with a smart device, regardless of economic status, age, or skill level. Through the use of object detection and pose estimation, our app will be able to track the movement of the ball in relation to the movements of the players, giving them feedback on the tightness of their handle, their timing, and whether or not they're complying with rules (travel violations, carry violations etc.). While coaches can provide similar feedback, personal coaches are costly and inaccessible for many, so we intend to create a free alternative that anyone can use provided they have a smart device.
+
+
+# How to Download
+
+The open beta of the app is available now through TestFlight, Apple's beta testing platform. Anyone can test it. Just go to the App Store, download TestFlight, and navigate to this link on your iPhone: 
+
+https://testflight.apple.com/join/MWslqJyf
  
 # Roles
 

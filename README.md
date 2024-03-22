@@ -13,7 +13,8 @@ https://github.com/Allen-ISD-Computer-Science/REPO_BasketballTrainer_2024/assets
 
 
 ## Flaws and Possible Solutions ##
-Dribbles are counted whenever the ball is not in possession of the user, such as when it bounces after a shot. Additionally, the user can create flase dribbles my moving the ball up and down quickly. One way to prevent the first issue mentioned would be to check the distance from the ball to the user, and check if the proportion of the ball's width to the distance between ball and person is within a certain threshold. As for the second issue, using a custom trained multi task model that performs object detection on balls and pose estimation on people, we can check if the ball is within the person's hands and not allow dribbles to occur when this condition is true.
+ Dribbles are counted whenever the ball is not in possession of the user, such as when it bounces after a shot. Additionally, the user can create flase dribbles my moving the ball up and down quickly. 
+ One way to prevent the first issue mentioned would be to check the distance from the ball to the user, and check if the proportion of the ball's width to the distance between ball and person is within a certain threshold. As for the second issue, using a custom trained multi task model that performs object detection on balls and pose estimation on people, we can check if the ball is within the person's hands and not allow dribbles to occur when this condition is true.
 
 # Shot Detection
 

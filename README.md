@@ -8,9 +8,17 @@ Our app, called Swish Lab, whose source code can be found on the iOSDev branch, 
 
 # Dribble Detection
 
+
+https://github.com/Allen-ISD-Computer-Science/REPO_BasketballTrainer_2024/assets/89935775/04162750-1602-4142-9d9c-4fcbb77f6bb1
+
+
 ## Flaws and Possible Solutions ##
 
 # Shot Detection
+
+
+https://github.com/Allen-ISD-Computer-Science/REPO_BasketballTrainer_2024/assets/89935775/536ead30-d773-4a0c-9877-f33dee6c0534
+
 
 ## Flaws and Possible Solutions ##
 

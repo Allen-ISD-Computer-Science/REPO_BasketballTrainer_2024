@@ -13,6 +13,7 @@ https://github.com/Allen-ISD-Computer-Science/REPO_BasketballTrainer_2024/assets
 
 
 ## Flaws and Possible Solutions ##
+Dribbles are counted whenever the ball is not in possession of the user, such as when it bounces after a shot. Additionally, the user can create flase dribbles my moving the ball up and down quickly. One way to prevent the first issue mentioned would be to check the distance from the ball to the user, and check if the proportion of the ball's width to the distance between ball and person is within a certain threshold. As for the second issue, using a custom trained multi task model that performs object detection on balls and pose estimation on people, we can check if the ball is within the person's hands and not allow dribbles to occur when this condition is true.
 
 # Shot Detection
 
@@ -21,6 +22,8 @@ https://github.com/Allen-ISD-Computer-Science/REPO_BasketballTrainer_2024/assets
 
 
 ## Flaws and Possible Solutions ##
+
+The algorithm at the moment just checks if the ball passes within the minimum and maximum x value of the ball, which creates problems with air balls occuring in front of or behind the camera. The only solution I could thisnk of was using image segmentation on the ball. Once the ball is within the net, the amount of pixels attributed to the ball should experience a sharp decrease, as the net is in front of it. Similarly to my solution to shot detection, I would need to train a custom multi task model that performs segmentation on the ball and object detection on the rim.
 
 # How to Download
 
